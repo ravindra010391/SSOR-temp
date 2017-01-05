@@ -1,7 +1,12 @@
 package com.dss.test.pageobject;
 
+import java.awt.List;
+
+import javax.xml.xpath.XPath;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 
 public class HomePageObject {
 
@@ -22,5 +27,26 @@ public class HomePageObject {
 
 	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[1]/div")
 	public static WebElement btn_Cancel;
+
+	//Advertise pop up close button
+	@FindBy(xpath = ".//*[@id='checkm8Ad_4']")
+	public static WebElement btn_AdClose;
+	
+	//Navigation links for logged in users 
+	@FindBy(xpath  = "html/body/header/div[1]/div[1]/a[4]")
+	public static WebElement icon_User;
+	
+	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[1]/a")
+	public static WebElement link_ProfilePage;
+	
+	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[2]/a" )
+	public static WebElement link_Newsletter;
+	
+	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[3]/a")
+	public static WebElement link_SignOut;
+	
+	
+
+	
 
 }
