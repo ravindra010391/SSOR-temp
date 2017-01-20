@@ -1,9 +1,7 @@
 package com.dss.test.pageobject;
 
 import java.awt.List;
-
 import javax.xml.xpath.XPath;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
