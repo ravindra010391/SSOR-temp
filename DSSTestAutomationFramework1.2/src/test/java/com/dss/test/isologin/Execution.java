@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
@@ -51,9 +52,6 @@ public class Execution {
 		
 		isoLoginFlow = new ISOLoginFlows(driver);
 		AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
-		
-		
-		
 		report =new ExtentReports("C:\\Automation1.2\\report\\Automation1.2.html");
 		
 		
@@ -63,15 +61,14 @@ public class Execution {
 
 	@Test
 	public void isISOLoginSuccessfull() throws ATUTestRecorderException {
+		System.out.println("Test case start");
 		videoRecorder = CoreUtility.recordScreen("isISOLoginSuccessfull");
 		videoRecorder.start();
-		
-		
-		logger = report.startTest("Verify ISO login");
+				
+		logger = report.startTest("Verify ISO login with valid user");
 		boolean isSuccess = isoLoginFlow.isISOLoginSuccess(logger, "test1test1@gmail.com", "tribune01");
 		Assert.assertTrue(isSuccess);
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
-		
 	}
 	
 
@@ -82,14 +79,16 @@ public class Execution {
 			logger.log(LogStatus.FAIL, result.getThrowable());
 			String screenshotPath = CoreUtility.captureScreen(driver, "screenshotName");
 			logger.log(LogStatus.FAIL, logger.addScreenCapture(screenshotPath));
-		
-			
 		}
-		System.out.println("Name : "+result.getName()+"Status "+result.getStatus()+" test name "+result.getTestName()+"class : "+result.getTestClass());
-		
+
 		report.endTest(logger);
+		driver.quit();
 		videoRecorder.stop();
-		report.flush();
 	}
 	
+	
+	@AfterTest
+	public void cleanup(){
+		report.flush();
+	}
 }

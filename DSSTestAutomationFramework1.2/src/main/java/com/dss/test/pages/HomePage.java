@@ -44,14 +44,14 @@ public class HomePage {
 	
 	private HomePage enterEmailId(String emailId){
 		CoreUtility.highlightElement(HomePageObject.textBox_EmailId, driver);
-		CoreUtility.waitForElement(HomePageObject.textBox_EmailId, driver);
+		CoreUtility.waitForElementPresent(HomePageObject.textBox_EmailId, driver);
 		CoreUtility.enterData(emailId, HomePageObject.textBox_EmailId);
 		return this;
 	}
 
 	
 	private HomePage enterPassword(String password){
-		CoreUtility.waitForElement(HomePageObject.textBox_Password, driver);
+		CoreUtility.waitForElementPresent(HomePageObject.textBox_Password, driver);
 		CoreUtility.highlightElement(HomePageObject.textBox_Password, driver);
 		CoreUtility.enterData(password, HomePageObject.textBox_Password);
 		return this;
@@ -59,7 +59,7 @@ public class HomePage {
 
 	
 	private HomePage clicklogin(){
-		CoreUtility.waitForElement(HomePageObject.btn_Login, driver);
+		CoreUtility.waitForElementPresent(HomePageObject.btn_Login, driver);
 		CoreUtility.highlightElement(HomePageObject.btn_Login, driver);
 		CoreUtility.clickOnElement(HomePageObject.btn_Login);
 		return this;
@@ -74,14 +74,14 @@ public class HomePage {
 	
 	private HomePage clickOnUserIcon(){
 		CoreUtility.highlightElement(HomePageObject.icon_User, driver);
-		CoreUtility.waitForElement(HomePageObject.icon_User, driver);
+		CoreUtility.waitForElementPresent(HomePageObject.icon_User, driver);
 		CoreUtility.clickOnElement(HomePageObject.icon_User);
 		return this;
 	}
 
 
 	private ProfilePage clickOnAccountLink(){
-		CoreUtility.waitForElement(HomePageObject.link_ProfilePage, driver);
+		CoreUtility.waitForElementPresent(HomePageObject.link_ProfilePage, driver);
 		CoreUtility.highlightElement(HomePageObject.link_ProfilePage, driver);
 		CoreUtility.clickOnElement(HomePageObject.link_ProfilePage);
 		return new ProfilePage(driver);

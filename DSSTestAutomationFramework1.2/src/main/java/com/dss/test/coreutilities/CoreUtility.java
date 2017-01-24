@@ -51,7 +51,7 @@ public class CoreUtility {
 		}
 	}
 
-	public static WebElement waitForElement(WebElement element, WebDriver driver){
+	public static WebElement waitForElementPresent(WebElement element, WebDriver driver){
 		WebElement visibleElement = null;
 
 		try{
