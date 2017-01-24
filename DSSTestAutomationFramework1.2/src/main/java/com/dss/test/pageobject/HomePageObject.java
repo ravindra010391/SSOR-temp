@@ -45,7 +45,7 @@ public class HomePageObject {
 	
 	
 	// SSO Login : social share icons
-	@FindBy;
+	//@FindBy;
 	
 
 	
