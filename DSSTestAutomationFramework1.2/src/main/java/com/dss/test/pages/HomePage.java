@@ -73,6 +73,7 @@ public class HomePage {
 
 	
 	private HomePage clickOnUserIcon(){
+		CoreUtility.highlightElement(HomePageObject.icon_User, driver);
 		CoreUtility.waitForElement(HomePageObject.icon_User, driver);
 		CoreUtility.clickOnElement(HomePageObject.icon_User);
 		return this;
@@ -81,6 +82,7 @@ public class HomePage {
 
 	private ProfilePage clickOnAccountLink(){
 		CoreUtility.waitForElement(HomePageObject.link_ProfilePage, driver);
+		CoreUtility.highlightElement(HomePageObject.link_ProfilePage, driver);
 		CoreUtility.clickOnElement(HomePageObject.link_ProfilePage);
 		return new ProfilePage(driver);
 	}
