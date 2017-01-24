@@ -44,6 +44,9 @@ public class HomePageObject {
 	public static WebElement link_SignOut;
 	
 	
+	// SSO Login : social share icons
+	@FindBy;
+	
 
 	
 

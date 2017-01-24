@@ -55,11 +55,11 @@ public class CoreUtility {
 		WebElement visibleElement = null;
 
 		try{
-			WebDriverWait wait = new WebDriverWait(driver,60);
+			WebDriverWait wait = new WebDriverWait(driver,15);
 			visibleElement = wait.until(ExpectedConditions.visibilityOf(element));
 		}
 		catch(Exception e){
-			System.out.println("No element found after WebdriverWait of 10 seconds");
+			System.out.println("No element found after WebdriverWait of 15 seconds");
 		}
 		return visibleElement;
 	}
@@ -79,10 +79,7 @@ public class CoreUtility {
 		}
 	}
 	
-	public static ATUTestRecorder recordScreen(String testcaseName) throws ATUTestRecorderException{
-		videoRecorder = new ATUTestRecorder("C:\\Automation1.2\\VideoRecord",testcaseName, false);
-		return videoRecorder;
-	}
+	
 
 	public static String captureScreen(WebDriver driver, String screenshotName ) throws IOException{
 		TakesScreenshot ts = (TakesScreenshot) driver;

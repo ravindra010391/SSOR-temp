@@ -13,6 +13,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
@@ -37,9 +38,9 @@ public class Execution {
 	
 	private ATUTestRecorder videoRecorder;
 	
-
+	@Parameters({"browser","platform"})
 	@BeforeTest
-	public void setup() throws ATUTestRecorderException{
+	public void setup(String browser, String platform) throws ATUTestRecorderException{
 		String path ="C:\\eclipse_1\\FF\\";
 		
 		System.setProperty("webdriver.gecko.driver", path+"geckodriver.exe");
@@ -58,13 +59,10 @@ public class Execution {
 		
 
 	}
-
-	@Test
+	
+	@Test(alwaysRun = false)
 	public void isISOLoginSuccessfull() throws ATUTestRecorderException {
-		System.out.println("Test case start");
-		videoRecorder = CoreUtility.recordScreen("isISOLoginSuccessfull");
-		videoRecorder.start();
-				
+
 		logger = report.startTest("Verify ISO login with valid user");
 		boolean isSuccess = isoLoginFlow.isISOLoginSuccess(logger, "test1test1@gmail.com", "tribune01");
 		Assert.assertTrue(isSuccess);
@@ -83,7 +81,6 @@ public class Execution {
 
 		report.endTest(logger);
 		driver.quit();
-		videoRecorder.stop();
 	}
 	
 	
