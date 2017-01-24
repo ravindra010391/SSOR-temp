@@ -1,6 +1,7 @@
 package com.dss.test.coreutilities;
 
-import org.apache.commons.exec.ExecuteException;
+import java.io.IOException;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -9,20 +10,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-
-import com.gargoylesoftware.htmlunit.javascript.host.file.File;
-import com.sun.jna.platform.FileUtils;
-
-import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;
-
-import java.io.IOException;
-import java.io.File.*;
 
 public class CoreUtility {
 	
-	private static ATUTestRecorder videoRecorder;
+	
 	
 	public static void clickOnElement(WebElement element){
 		

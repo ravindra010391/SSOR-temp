@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.dss.test.coreutilities.CoreUtility;
+import com.dss.test.coreutilities.Log;
 import com.dss.test.pageobject.ProfilePageObject;
 
 public class ProfilePage {
@@ -14,6 +15,7 @@ public class ProfilePage {
     public ProfilePage(WebDriver driver) {
            this.driver = driver;
            PageFactory.initElements(driver, ProfilePageObject.class);
+       	Log.logInit();
     }
 
     public boolean isExpectedUserLogged(String emailId){
@@ -29,7 +31,9 @@ public class ProfilePage {
     //
     private String getPreferedEmail() {
 		CoreUtility.waitForElementPresent(ProfilePageObject.preferedEmail, driver);
+		Log.info("Getting preferred email id ");
 		return ProfilePageObject.preferedEmail.getText();
+		
 
 	}
     
