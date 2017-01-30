@@ -18,23 +18,23 @@ public class ProfilePage {
        	Log.logInit();
     }
 
+    //**********************PUBLIC METHODS******************************************
     public boolean isExpectedUserLogged(String emailId){
 
            boolean isSuccess = false;
-           if(emailId.equalsIgnoreCase(getPreferedEmail())){
+           if(emailId.equalsIgnoreCase(getPreferredEmail())){
                   isSuccess= true;
+                  Log.info("Preferred Email matched with the User's Email ");
            }
               return isSuccess;
     }
 
 
-    //
-    private String getPreferedEmail() {
-		CoreUtility.waitForElementPresent(ProfilePageObject.preferedEmail, driver);
-		Log.info("Getting preferred email id ");
-		return ProfilePageObject.preferedEmail.getText();
-		
-
+   //**********************PRIVATE METHODS******************************************
+    private String getPreferredEmail() {
+		CoreUtility.waitForElementPresent(ProfilePageObject.preferredEmail, driver);
+		Log.info("Getting 'Preferred Email' on Profile Page");
+		return ProfilePageObject.preferredEmail.getText();
 	}
     
     

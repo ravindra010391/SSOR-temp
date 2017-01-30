@@ -46,11 +46,11 @@ public class CoreUtility {
 		WebElement visibleElement = null;
 
 		try{
-			WebDriverWait wait = new WebDriverWait(driver,15);
+			WebDriverWait wait = new WebDriverWait(driver,20);
 			visibleElement = wait.until(ExpectedConditions.visibilityOf(element));
 		}
 		catch(Exception e){
-			System.out.println("No element found after WebdriverWait of 15 seconds");
+			System.out.println("waitForElementPresent : Catched !!");
 		}
 		return visibleElement;
 	}
@@ -75,7 +75,7 @@ public class CoreUtility {
 	public static String captureScreen(WebDriver driver, String screenshotName ) throws IOException{
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		java.io.File source = ts.getScreenshotAs(OutputType.FILE);
-		String dest = System.getProperty("user.dir")+"ErrorSreenshot/"+screenshotName+".png";
+		String dest = System.getProperty("user.dir")+"//TempErrorSreenshot//"+screenshotName+".png";
 		java.io.File destination = new java.io.File(dest);
 		org.apache.commons.io.FileUtils.copyFile(source, destination);
 		return dest;

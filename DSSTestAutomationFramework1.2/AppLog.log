@@ -1,7 +1,3 @@
-2017-01-24 20:18:12 INFO  FILE_LOGGER:48 - Click on Login Button Top NAV
-2017-01-24 20:18:14 INFO  FILE_LOGGER:48 - Enter Email id
-2017-01-24 20:18:15 INFO  FILE_LOGGER:48 - Enter Password
-2017-01-24 20:18:16 INFO  FILE_LOGGER:48 - Click on Login button at the login panel
-2017-01-24 20:18:25 INFO  FILE_LOGGER:48 - Click on User Account menu
-2017-01-24 20:18:28 INFO  FILE_LOGGER:48 - Click on Profile link of account menu drop-down
-2017-01-24 20:18:39 INFO  FILE_LOGGER:48 - Getting preferred email id 
+2017-01-30 18:32:50 INFO  FILE_LOGGER:28 - ****************************************************************************************
+2017-01-30 18:32:50 INFO  FILE_LOGGER:30 - ------------------------------ Verify ISO login with valid user -------------------------------------
+2017-01-30 18:32:50 INFO  FILE_LOGGER:32 - ****************************************************************************************

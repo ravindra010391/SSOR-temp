@@ -35,7 +35,7 @@ public class Log {
 
 	 	//This is to print log for the ending of the test case
 
-	  public static void endTestCase(String sTestCaseName){
+	  public static void endTestCase(){
 
 	 	Log.info("****************************"+"-E---N---D-"+"*******************************************");
 

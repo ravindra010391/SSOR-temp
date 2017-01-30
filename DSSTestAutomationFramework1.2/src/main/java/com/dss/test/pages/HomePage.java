@@ -25,7 +25,7 @@ public class HomePage {
 	public HomePage clickOnLoginTopNav(){
 		CoreUtility.highlightElement(HomePageObject.btn_LoginTopNav, driver);
 		CoreUtility.clickOnElement(HomePageObject.btn_LoginTopNav);
-		Log.info("Click on Login Button Top NAV");
+		Log.info("Clicked on Login Button of Top NAV");
 		return this;
 	}
 	
@@ -40,6 +40,7 @@ public class HomePage {
 	
 	public ProfilePage gotoProfilePage(){
 		profilepage = clickOnUserIcon().clickOnAccountLink();
+		Log.info("Redirecting to Profile page");
 		return profilepage;
 	}
 
@@ -50,7 +51,7 @@ public class HomePage {
 		CoreUtility.highlightElement(HomePageObject.textBox_EmailId, driver);
 		CoreUtility.waitForElementPresent(HomePageObject.textBox_EmailId, driver);
 		CoreUtility.enterData(emailId, HomePageObject.textBox_EmailId);
-		Log.info("Enter Email id");
+		Log.info("Entered Email id");
 		return this;
 	}
 
@@ -59,7 +60,7 @@ public class HomePage {
 		CoreUtility.waitForElementPresent(HomePageObject.textBox_Password, driver);
 		CoreUtility.highlightElement(HomePageObject.textBox_Password, driver);
 		CoreUtility.enterData(password, HomePageObject.textBox_Password);
-		Log.info("Enter Password");
+		Log.info("Entered Password");
 		return this;
 	}
 
@@ -68,14 +69,14 @@ public class HomePage {
 		CoreUtility.waitForElementPresent(HomePageObject.btn_Login, driver);
 		CoreUtility.highlightElement(HomePageObject.btn_Login, driver);
 		CoreUtility.clickOnElement(HomePageObject.btn_Login);
-		Log.info("Click on Login button at the login panel");
+		Log.info("Clicked on Login button at the login panel");
 		return this;
 	}
 	
 	
 	private HomePage clickCancel(){
 		CoreUtility.clickOnElement(HomePageObject.btn_Cancel);
-		Log.info("Click on Cancel button at the login panel");
+		Log.info("Clicked on Cancel button at the login panel");
 		return this;
 	}
 
@@ -84,7 +85,7 @@ public class HomePage {
 		CoreUtility.highlightElement(HomePageObject.icon_User, driver);
 		CoreUtility.waitForElementPresent(HomePageObject.icon_User, driver);
 		CoreUtility.clickOnElement(HomePageObject.icon_User);
-		Log.info("Click on User Account menu");
+		Log.info("Clicked on User Account menu");
 		return this;
 	}
 
@@ -93,7 +94,7 @@ public class HomePage {
 		CoreUtility.waitForElementPresent(HomePageObject.link_ProfilePage, driver);
 		CoreUtility.highlightElement(HomePageObject.link_ProfilePage, driver);
 		CoreUtility.clickOnElement(HomePageObject.link_ProfilePage);
-		Log.info("Click on Profile link of account menu drop-down");
+		Log.info("Clicked on Profile link of account menu drop-down");
 		return new ProfilePage(driver);
 	}
 

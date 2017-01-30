@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import com.dss.test.apputilities.AppUtility;
 import com.dss.test.apputilities.Config;
 import com.dss.test.coreutilities.CoreUtility;
+import com.dss.test.coreutilities.Log;
 import com.dss.test.flows.ISOLoginFlows;
 import com.dss.test.pageobject.HomePageObject;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -35,26 +36,25 @@ public class Execution {
 	@Parameters({"browser","platform"})
 	@BeforeTest
 	public void setup(String browser, String platform) {
-		driver = new Config().selectBrowser(browser, platform);
 		
+		driver = new Config().selectBrowser(browser, platform);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com");
 		CoreUtility.handleAlert(driver, "accept");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		isoLoginFlow = new ISOLoginFlows(driver);
 		AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
-		report =new ExtentReports("C:\\Automation1.2\\report\\Automation1.2.html");
-		
-		
-		
+		report = new ExtentReports(System.getProperty("user.dir")+"\\AutomationReport.html");
 
 	}
 	
-	@Test(alwaysRun = true)
+	@Test(enabled = true)
 	public void isISOLoginSuccessfull() {
-
-		logger = report.startTest("Verify ISO login with valid user");
 		
+		String testCaseName = "Verify ISO login with valid user";
+		logger = report.startTest(testCaseName);
+		Log.startTestCase(testCaseName);
 		boolean isSuccess = isoLoginFlow.isISOLoginSuccess(logger, "test1test1@gmail.com", "tribune01");
 		Assert.assertTrue(isSuccess);
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
@@ -71,6 +71,7 @@ public class Execution {
 		}
 
 		report.endTest(logger);
+		Log.endTestCase();
 		driver.quit();
 	}
 	
