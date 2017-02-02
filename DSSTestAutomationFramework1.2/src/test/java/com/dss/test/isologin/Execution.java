@@ -3,8 +3,13 @@ package com.dss.test.isologin;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -37,20 +42,23 @@ public class Execution {
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		
-		driver = new Config().selectBrowser(browser, platform);
+		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\src\\main\\resources\\geckodriver.exe");
+		driver=new FirefoxDriver();
+		
+		//driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com");
-		CoreUtility.handleAlert(driver, "accept");
-		
+		//driver.get("http://nguxbeta:nguxtr!b@ngux.chicagotribune.stage.tribdev.com");
+		//CoreUtility.handleAlert(driver, "accept");
+	
 		isoLoginFlow = new ISOLoginFlows(driver);
-		AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
-		report = new ExtentReports(System.getProperty("user.dir")+"\\AutomationReport.html");
+		//AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
+	//	report = new ExtentReports(System.getProperty("user.dir")+"\\AutomationReport.html");
 
 	}
 	
-	@Test(enabled = true)
-	public void isISOLoginSuccessfull() {
+	@Test(enabled = false)
+	public void isISOLoginSuccessfull() throws InterruptedException {
 		
 		String testCaseName = "Verify ISO login with valid user";
 		logger = report.startTest(testCaseName);
@@ -60,6 +68,18 @@ public class Execution {
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
 	}
 	
+	@Test(enabled = true)
+	public void test1() throws InterruptedException
+	{ 
+		driver.get("http://www.google.com/");
+	    System.out.println(driver.getTitle());
+	    driver.findElement(By.className("gsfi")).sendKeys(Keys.CONTROL+"t"); 
+	    System.out.println("ctrl + t");
+	    //driver.get("http://www.bing.com/"); 
+
+		    
+		    Thread.sleep(100000);
+	}
 
 	@AfterMethod
 	public void tearDown(ITestResult result) throws IOException{
@@ -81,3 +101,12 @@ public class Execution {
 		report.flush();
 	}
 }
+
+
+
+
+
+
+
+
+

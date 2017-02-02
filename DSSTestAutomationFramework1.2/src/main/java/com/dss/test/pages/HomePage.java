@@ -39,6 +39,7 @@ public class HomePage {
 	
 	
 	public ProfilePage gotoProfilePage(){
+		
 		profilepage = clickOnUserIcon().clickOnAccountLink();
 		Log.info("Redirecting to Profile page");
 		return profilepage;
@@ -83,7 +84,6 @@ public class HomePage {
 	
 	private HomePage clickOnUserIcon(){
 		CoreUtility.highlightElement(HomePageObject.icon_User, driver);
-		CoreUtility.waitForElementPresent(HomePageObject.icon_User, driver);
 		CoreUtility.clickOnElement(HomePageObject.icon_User);
 		Log.info("Clicked on User Account menu");
 		return this;

@@ -57,16 +57,17 @@ public class CoreUtility {
 
 
 	public static void handleAlert(WebDriver driver, String action){
-
-		Alert alert = driver.switchTo().alert();
-
-		if(action.equalsIgnoreCase("accept")){
-			alert.accept();
-			System.out.println("Alert Accepted");
-		}
-		else{
-			alert.dismiss();
-			System.out.println("Alert Dissmissed ");
+		try{
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			if(action.equalsIgnoreCase("accept")){
+				alert.accept();System.out.println("Alert Accepted");}
+			else{alert.dismiss();System.out.println("Alert Dissmissed ");}
+		
+		}catch(Exception e)
+		{
+			System.out.println("Alert is not Present!!");
 		}
 	}
 	

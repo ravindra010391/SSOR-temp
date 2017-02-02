@@ -14,7 +14,7 @@ public class ISOLoginFlows extends Flows {
 	}
 	
 	//Verify ISO login with valid user
-	public boolean isISOLoginSuccess(ExtentTest logger, String userName, String userPassword){
+	public boolean isISOLoginSuccess(ExtentTest logger, String userName, String userPassword) throws InterruptedException{
 		
 		boolean isSuccess = false;
 		logger.log(LogStatus.INFO, "STEP 1: Click on Top Nav LogIn button");
@@ -22,6 +22,8 @@ public class ISOLoginFlows extends Flows {
 		
 		logger.log(LogStatus.INFO, "STEP 2: Login with Username and Password");
 		homepage.doLogin(userName, userPassword);
+
+ 		Thread.sleep(10000);
 		
 		logger.log(LogStatus.INFO,"STEP 3: Navigate to the Profile Page");
 		profilepage = homepage.gotoProfilePage();
