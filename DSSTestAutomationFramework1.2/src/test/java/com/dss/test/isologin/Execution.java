@@ -91,12 +91,14 @@ public class Execution {
 		report.endTest(logger);
 		Log.endTestCase();
 		driver.quit();
+		System.out.println("after method");
 	}
 	
 	
 	@AfterTest
 	public void cleanup(){
 		report.flush();
+		System.out.println("After test");
 	}
 }
 
