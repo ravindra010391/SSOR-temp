@@ -62,7 +62,7 @@ public class Execution {
 
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void isISOLoginSuccessfull() throws InterruptedException {
 		
 		String testCaseName = "Verify ISO login with valid user";
@@ -73,7 +73,7 @@ public class Execution {
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void test1() throws InterruptedException
 	{ 
 		driver.get("http://www.google.com/");
