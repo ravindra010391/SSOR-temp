@@ -45,12 +45,12 @@ public class Execution {
 		driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//driver.get("http://nguxbeta:nguxtr!b@ngux.chicagotribune.stage.tribdev.com");
-		//CoreUtility.handleAlert(driver, "accept");
+		driver.get("http://nguxbeta:nguxtr!b@ngux.chicagotribune.stage.tribdev.com");
+		CoreUtility.handleAlert(driver, "accept");
 	
 		isoLoginFlow = new ISOLoginFlows(driver);
-		//AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
-	//	report = new ExtentReports(System.getProperty("user.dir")+"\\AutomationReport.html");
+		AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
+		report = new ExtentReports(System.getProperty("user.dir")+"\\AutomationReport.html");
 
 	}
 	
