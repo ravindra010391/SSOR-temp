@@ -6,13 +6,4 @@
       <class name="com.dss.test.isologin.Execution"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.dss.test.isologin.Execution">
-        <methods>
-          <include name="test1"/>
-        </methods>
-      </class> <!-- com.dss.test.isologin.Execution -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

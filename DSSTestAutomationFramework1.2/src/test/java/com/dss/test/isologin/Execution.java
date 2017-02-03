@@ -1,6 +1,8 @@
 package com.dss.test.isologin;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -38,6 +40,12 @@ public class Execution {
 	private ExtentReports report;
 	private ExtentTest logger;
 	
+	
+	
+	
+	
+	
+	
 	@Parameters({"browser","platform"})
 	@BeforeTest
 	public void setup(String browser, String platform) {
@@ -54,7 +62,7 @@ public class Execution {
 
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void isISOLoginSuccessfull() throws InterruptedException {
 		
 		String testCaseName = "Verify ISO login with valid user";
@@ -65,7 +73,7 @@ public class Execution {
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void test1() throws InterruptedException
 	{ 
 		driver.get("http://www.google.com/");
