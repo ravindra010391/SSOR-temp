@@ -11,7 +11,7 @@
 	</appender>
 	
 	<appender name="file" class="org.apache.log4j.RollingFileAppender">
-	   <param name="append" value="false" />
+	   <param name="append" value="true" />
 	   <param name="maxFileSize" value="10KB" />
 	   <param name="maxBackupIndex" value="5" />
 	   <!-- For Tomcat -->
@@ -26,7 +26,8 @@
 		<level value="INFO" />
 		<appender-ref ref="console" />
 	</root>
-<logger name = "FILE_LOGGER">
+
+	<logger name = "FILE_LOGGER">
 	<level value="DEBUG" />
 		<appender-ref ref="file" />
 		</logger>
