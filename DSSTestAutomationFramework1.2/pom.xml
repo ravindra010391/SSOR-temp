@@ -16,15 +16,17 @@
   <build>
 		<plugins>
 			<!-- Compiler plug-in -->
+			
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>3.1</version>
+  <configuration>
 					<source>${jdk.level}</source>
 					<target>${jdk.level}</target>
 				</configuration>
-				<executions>
-   	 <execution>
+  <executions>
+    <execution>
       <id>log4j-plugin-processor</id>
       <goals>
         <goal>compile</goal>
@@ -38,8 +40,7 @@
       </configuration>
     </execution>
   </executions>
-				
-			</plugin>
+</plugin>
 			
 			<!-- Below plug-in is used to execute tests -->
 			<plugin>
