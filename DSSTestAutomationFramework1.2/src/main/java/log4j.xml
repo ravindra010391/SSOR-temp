@@ -28,7 +28,7 @@
 	</root>
 
 	<logger name = "FILE_LOGGER">
-	<level value="DEBUG" />
+	<level value="INFO" />
 		<appender-ref ref="file" />
 		</logger>
 </log4j:configuration>
