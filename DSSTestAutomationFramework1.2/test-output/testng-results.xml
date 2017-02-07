@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="67867" started-at="2017-02-07T09:35:27Z" finished-at="2017-02-07T09:36:35Z">
+  <suite name="Suite" duration-ms="66110" started-at="2017-02-07T09:46:29Z" finished-at="2017-02-07T09:47:35Z">
     <groups>
     </groups>
-    <test name="DSS-Regression With Firefox" duration-ms="67867" started-at="2017-02-07T09:35:27Z" finished-at="2017-02-07T09:36:35Z">
+    <test name="DSS-Regression With Firefox" duration-ms="66110" started-at="2017-02-07T09:46:29Z" finished-at="2017-02-07T09:47:35Z">
       <class name="com.dss.test.isologin.Execution">
-        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="setup" is-config="true" duration-ms="52495" started-at="2017-02-07T15:05:27Z" finished-at="2017-02-07T15:06:19Z">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="setup" is-config="true" duration-ms="54541" started-at="2017-02-07T15:16:29Z" finished-at="2017-02-07T15:17:24Z">
           <params>
             <param index="0">
               <value>
@@ -23,26 +23,24 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="isISOLoginSuccessfull" duration-ms="10583" started-at="2017-02-07T15:06:19Z" finished-at="2017-02-07T15:06:30Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="isISOLoginSuccessfull" duration-ms="10985" started-at="2017-02-07T15:17:24Z" finished-at="2017-02-07T15:17:35Z">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Unable to locate element: //*[@id='reg-overlay']/div/div[2]/form/div[1]/fieldset[1]/input
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Failed to decode response from marionette
 Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
 System info: host: 'U2-DPE-CPB-0111', ip: '10.10.121.77', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_73'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=3228, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
-Session ID: 1485a4c9-5e11-4dbe-9508-966fdb49d70a
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=1592, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
+Session ID: 21ad32df-bf42-4c22-ad86-01f8a46f0e8c
 *** Element info: {Using=xpath, value=//*[@id='reg-overlay']/div/div[2]/form/div[1]/fieldset[1]/input}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[@id='reg-overlay']/div/div[2]/form/div[1]/fieldset[1]/input
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
 Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
 System info: host: 'U2-DPE-CPB-0111', ip: '10.10.121.77', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_73'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=3228, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
-Session ID: 1485a4c9-5e11-4dbe-9508-966fdb49d70a
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=1592, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
+Session ID: 21ad32df-bf42-4c22-ad86-01f8a46f0e8c
 *** Element info: {Using=xpath, value=//*[@id='reg-overlay']/div/div[2]/form/div[1]/fieldset[1]/input}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -95,11 +93,11 @@ Session ID: 1485a4c9-5e11-4dbe-9508-966fdb49d70a
 	at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isISOLoginSuccessfull -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="tearDown" is-config="true" duration-ms="4437" started-at="2017-02-07T15:06:30Z" finished-at="2017-02-07T15:06:34Z">
+        <test-method status="FAIL" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-02-07T15:17:35Z" finished-at="2017-02-07T15:17:35Z">
           <params>
             <param index="0">
               <value>
@@ -107,10 +105,65 @@ Session ID: 1485a4c9-5e11-4dbe-9508-966fdb49d70a
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Tried to run command without establishing a connection
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'U2-DPE-CPB-0111', ip: '10.10.121.77', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_73'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=1592, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
+Session ID: 21ad32df-bf42-4c22-ad86-01f8a46f0e8c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Tried to run command without establishing a connection
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'U2-DPE-CPB-0111', ip: '10.10.121.77', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_73'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=1592, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
+Session ID: 21ad32df-bf42-4c22-ad86-01f8a46f0e8c
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:127)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:93)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:42)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:658)
+	at org.openqa.selenium.firefox.FirefoxDriver.getScreenshotAs(FirefoxDriver.java:428)
+	at com.dss.test.coreutilities.CoreUtility.captureScreen(CoreUtility.java:78)
+	at com.dss.test.isologin.Execution.tearDown(Execution.java:95)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:709)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:400)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="cleanup()[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="cleanup" is-config="true" duration-ms="301" started-at="2017-02-07T15:06:34Z" finished-at="2017-02-07T15:06:35Z">
+        <test-method status="SKIP" signature="cleanup()[pri:0, instance:com.dss.test.isologin.Execution@152f6e2]" name="cleanup" is-config="true" duration-ms="0" started-at="2017-02-07T15:17:35Z" finished-at="2017-02-07T15:17:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->

@@ -19,7 +19,6 @@
           <include name="tearDown"/>
           <include name="isISOLoginSuccessfull"/>
           <include name="setup"/>
-          <include name="cleanup"/>
         </methods>
       </class> <!-- com.dss.test.isologin.Execution -->
     </classes>

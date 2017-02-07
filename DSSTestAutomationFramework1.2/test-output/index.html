@@ -128,13 +128,12 @@
                   <a name="isISOLoginSuccessfull">
                   </a> <!-- isISOLoginSuccessfull -->
                   <span class="method-name">isISOLoginSuccessfull</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: //*[@id=&apos;reg-overlay&apos;]/div/div[2]/form/div[1]/fieldset[1]/input
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Failed to decode response from marionette
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
 System info: host: &apos;U2-DPE-CPB-0111&apos;, ip: &apos;10.10.121.77&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_73&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=3228, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
-Session ID: 1485a4c9-5e11-4dbe-9508-966fdb49d70a
+Capabilities [{rotatable=false, raisesAccessibilityExceptions=false, marionette=true, firefoxOptions={args=[], prefs={}}, appBuildId=20170125094131, version=, platform=XP, proxy={}, command_id=1, specificationLevel=0, acceptSslCerts=false, processId=1592, browserVersion=51.0.1, platformVersion=6.1, XULappId={ec8030f7-c20a-464f-9b0e-13a3a9e97384}, browserName=firefox, takesScreenshot=true, takesElementScreenshot=true, platformName=windows_nt}]
+Session ID: 21ad32df-bf42-4c22-ad86-01f8a46f0e8c
 *** Element info: {Using=xpath, value=//*[@id=&apos;reg-overlay&apos;]/div/div[2]/form/div[1]/fieldset[1]/input}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:127)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:93)
@@ -229,7 +228,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'isISOLoginSuccessfull')
 data.setCell(0, 2, 'com.dss.test.isologin.Execution')
-data.setCell(0, 3, 10583);
+data.setCell(0, 3, 10985);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -276,16 +275,14 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">isISOLoginSuccessfull</span>
-                <span class="method-start">52502 ms</span>
+                <span class="method-start">54552 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">tearDown([TestResult name=isISOLoginSuccessfull status=FAILURE method=Execution.isISOLoginSuccessfull()[pri:0...)</span>
-                <span class="method-start">63112 ms</span>
+                <span class="method-start">65752 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">cleanup</span>
-                <span class="method-start">67551 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
