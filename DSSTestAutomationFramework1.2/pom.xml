@@ -30,12 +30,12 @@
       <id>log4j-plugin-processor</id>
       <goals>
         <goal>compile</goal>
-      </goals>
+       </goals>
       <phase>process-classes</phase>
       <configuration>
         <proc>only</proc>
         <annotationProcessors>
-          <annotationProcessor>org.apache.logging.log4j.core.config.plugins.processor.PluginProcessor</annotationProcessor>
+      		 <annotationProcessor>org.apache.logging.log4j.core.config.plugins.processor.PluginProcessor</annotationProcessor>
         </annotationProcessors>
       </configuration>
     </execution>
@@ -74,6 +74,7 @@
     <dependency>
    	 	<groupId>org.testng</groupId>
    		 <artifactId>testng</artifactId>
+   		 <scope>compile</scope>
    		 <version>6.10</version>
 	</dependency>
 	<dependency>
