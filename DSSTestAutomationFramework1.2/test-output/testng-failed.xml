@@ -10,17 +10,4 @@
       <class name="com.dss.test.isologin.Execution"/>
     </classes>
   </test> <!-- DSS-Regression With Firefox -->
-  <test name="DSS-Regression With Firefox(failed)" parallel="tests">
-    <parameter name="browser" value="firefox"/>
-    <parameter name="platform" value="windows"/>
-    <classes>
-      <class name="com.dss.test.isologin.Execution">
-        <methods>
-          <include name="tearDown"/>
-          <include name="isISOLoginSuccessfull"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.dss.test.isologin.Execution -->
-    </classes>
-  </test> <!-- DSS-Regression With Firefox(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -49,7 +49,7 @@ public class Execution {
 	@Parameters({"browser","platform"})
 	@BeforeTest
 	public void setup(String browser, String platform) {
-		
+		Log.logInit();
 		driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
