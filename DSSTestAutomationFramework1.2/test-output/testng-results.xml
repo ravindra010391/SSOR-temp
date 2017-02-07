@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="77499" started-at="2017-02-07T15:22:29Z" finished-at="2017-02-07T15:23:47Z">
+  <suite name="Suite" duration-ms="76219" started-at="2017-02-07T15:46:27Z" finished-at="2017-02-07T15:47:43Z">
     <groups>
     </groups>
-    <test name="DSS-Regression With Firefox" duration-ms="77499" started-at="2017-02-07T15:22:29Z" finished-at="2017-02-07T15:23:47Z">
+    <test name="DSS-Regression With Firefox" duration-ms="76219" started-at="2017-02-07T15:46:27Z" finished-at="2017-02-07T15:47:43Z">
       <class name="com.dss.test.isologin.Execution">
-        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="setup" is-config="true" duration-ms="51548" started-at="2017-02-07T20:52:29Z" finished-at="2017-02-07T20:53:21Z">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="setup" is-config="true" duration-ms="51083" started-at="2017-02-07T21:16:27Z" finished-at="2017-02-07T21:17:18Z">
           <params>
             <param index="0">
               <value>
@@ -23,11 +23,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="isISOLoginSuccessfull" duration-ms="22706" started-at="2017-02-07T20:53:21Z" finished-at="2017-02-07T20:53:43Z">
+        <test-method status="PASS" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="isISOLoginSuccessfull" duration-ms="22156" started-at="2017-02-07T21:17:18Z" finished-at="2017-02-07T21:17:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isISOLoginSuccessfull -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="tearDown" is-config="true" duration-ms="2847" started-at="2017-02-07T20:53:43Z" finished-at="2017-02-07T20:53:46Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="tearDown" is-config="true" duration-ms="2651" started-at="2017-02-07T21:17:40Z" finished-at="2017-02-07T21:17:43Z">
           <params>
             <param index="0">
               <value>
@@ -38,7 +38,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="cleanup()[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="cleanup" is-config="true" duration-ms="388" started-at="2017-02-07T20:53:46Z" finished-at="2017-02-07T20:53:47Z">
+        <test-method status="PASS" signature="cleanup()[pri:0, instance:com.dss.test.isologin.Execution@1f256fa]" name="cleanup" is-config="true" duration-ms="318" started-at="2017-02-07T21:17:43Z" finished-at="2017-02-07T21:17:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
