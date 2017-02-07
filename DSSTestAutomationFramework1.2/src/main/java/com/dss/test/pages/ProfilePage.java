@@ -15,7 +15,7 @@ public class ProfilePage {
     public ProfilePage(WebDriver driver) {
            this.driver = driver;
            PageFactory.initElements(driver, ProfilePageObject.class);
-       	//Log.logInit();
+       	  Log.logInit();
     }
 
     //**********************PUBLIC METHODS******************************************

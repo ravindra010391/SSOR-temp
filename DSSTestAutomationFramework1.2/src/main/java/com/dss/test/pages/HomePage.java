@@ -18,7 +18,7 @@ public class HomePage {
 	public HomePage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, HomePageObject.class);
-		//Log.logInit();
+		Log.logInit();
 	}
 
 	//****************PUBLIC METHODS*******************************
