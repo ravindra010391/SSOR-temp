@@ -11,7 +11,7 @@ public class Log {
 	public static Logger Log;
 	
 	public static void logInit(){
-		BasicConfigurator.configure();
+		//BasicConfigurator.configure();
 		//PropertyConfigurator.configure("/DSS-SSORTestAutomation/src/main/java/log4j.properties");
 		//CONSOLE_LOGGER = Logger.getLogger("CONSOLE_LOGGER");
 		Log = Logger.getLogger("FILE_LOGGER");
