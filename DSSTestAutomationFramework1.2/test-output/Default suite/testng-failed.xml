@@ -3,7 +3,27 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
+      <class name="com.dss.test.flows.Flows"/>
+      <class name="com.dss.test.pageobject.HomePageObject"/>
+      <class name="com.dss.test.coreutilities.CoreUtility"/>
+      <class name="com.dss.test.apputilities.AppUtility"/>
+      <class name="com.dss.test.coreutilities.Log"/>
+      <class name="com.dss.test.pageobject.ProfilePageObject"/>
+      <class name="com.dss.test.pages.HomePage"/>
+      <class name="com.dss.test.flows.SSOLoginFlows"/>
+      <class name="com.dss.test.apputilities.Config"/>
+      <class name="com.dss.test.pages.ProfilePage"/>
+      <class name="com.dss.test.flows.ISOLoginFlows"/>
       <class name="com.dss.test.isologin.Execution"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.dss.test.isologin.Execution">
+        <methods>
+          <include name="isISOLoginSuccessfull"/>
+        </methods>
+      </class> <!-- com.dss.test.isologin.Execution -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
