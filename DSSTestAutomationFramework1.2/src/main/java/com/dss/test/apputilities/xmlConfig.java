@@ -12,6 +12,7 @@ public class xmlConfig {
 		System.out.println(marketToken+" "+marketEnvironmentToken+" "+allBrowsersTocken);
 		String marketFullName = getMarketFullName(marketToken);
 		String URL = createURL(marketFullName, marketEnvironmentToken);
+		System.out.println("marketFullName = "+marketFullName);
 		getAllBrowser(allBrowsersTocken);
 		
 	}
