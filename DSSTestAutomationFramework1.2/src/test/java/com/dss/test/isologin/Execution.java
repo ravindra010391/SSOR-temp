@@ -52,6 +52,10 @@ public class Execution {
 		
 		String parameter2 = System.getProperty("PARAMETER2");
 		System.out.println("jenkinParameter = " +parameter2);
+		
+		String parameter3 = System.getProperty("PARAMETER3");
+		System.out.println("jenkinParameter = " +parameter3);
+	
 	
 		
 		
