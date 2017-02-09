@@ -2,6 +2,7 @@ package com.dss.test.isologin;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -50,6 +51,9 @@ public class Execution {
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
+		Properties x = System.getProperties();
+		System.out.println("properties :"+x.getProperty("jenkinParameter"));
+		
 		String jenkinParameter = System.getProperty("jenkinParameter");
 		System.out.println("jenkinParameter = "+jenkinParameter);
 		driver = new Config().selectBrowser(browser, platform);
