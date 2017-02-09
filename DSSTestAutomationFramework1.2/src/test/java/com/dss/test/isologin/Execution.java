@@ -50,6 +50,9 @@ public class Execution {
 		String parameter1 = System.getProperty("PARAMETER1");
 		System.out.println("jenkinParameter = " +parameter1);
 		
+		String parameter2 = System.getProperty("PARAMETER2");
+		System.out.println("jenkinParameter = " +parameter2);
+	
 		
 		
 		driver = new Config().selectBrowser(browser, platform);
