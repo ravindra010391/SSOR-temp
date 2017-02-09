@@ -47,8 +47,16 @@ public class Execution {
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
-		String parameter1 = System.getProperty("CONFIG_PARAMETER");
-		System.out.println("jenkinParameter = " +parameter1);
+		String ConfibParameterValues = System.getProperty("CONFIG_PARAMETER");
+		System.out.println("jenkinParameter = " +ConfibParameterValues);
+		
+		String[] marketSpecificConfig = ConfibParameterValues.split(" ");
+		for(String each : marketSpecificConfig){
+			System.out.println("Each value :"+each);
+		}
+		
+		
+		
 		
 		
 	
