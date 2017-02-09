@@ -24,6 +24,7 @@ import org.testng.annotations.Test;
 
 import com.dss.test.apputilities.AppUtility;
 import com.dss.test.apputilities.Config;
+import com.dss.test.apputilities.xmlConfig;
 import com.dss.test.coreutilities.CoreUtility;
 import com.dss.test.coreutilities.Log;
 import com.dss.test.flows.ISOLoginFlows;
@@ -41,32 +42,23 @@ public class Execution {
 	private ExtentReports report;
 	private ExtentTest logger;
 	
+	@BeforeSuite
+	public void suitConfig(){
+		String ConfibParameterValues = System.getProperty("CONFIG_PARAMETER");
+		System.out.println("jenkinParameter = " +ConfibParameterValues);
+		
+		String[] marketSpecificConfig = ConfibParameterValues.split(" ");
+		for(String marketConfigData : marketSpecificConfig){
+			
+			xmlConfig.createXMLFile(marketConfigData);
+		}
+	}
 
 	
 	@Parameters({"browser","platform"})
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
-		String ConfibParameterValues = System.getProperty("CONFIG_PARAMETER");
-		System.out.println("jenkinParameter = " +ConfibParameterValues);
-		
-		String[] marketSpecificConfig = ConfibParameterValues.split(" ");
-		for(String market : marketSpecificConfig){
-			System.out.println("Each value :"+market);
-			
-			String[] marketConfig = market.split("-");
-			for(String eachConfig : marketConfig){
-				System.out.println(" --- "+eachConfig);
-		}
-		
-		}
-		
-		
-		
-	
-	
-		
-		
 		driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
