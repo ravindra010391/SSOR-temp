@@ -47,14 +47,10 @@ public class Execution {
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
-		String parameter1 = System.getProperty("PARAMETER1");
+		String parameter1 = System.getProperty("CONFIG_PARAMETER");
 		System.out.println("jenkinParameter = " +parameter1);
 		
-		String parameter2 = System.getProperty("PARAMETER2");
-		System.out.println("jenkinParameter = " +parameter2);
 		
-		String parameter3 = System.getProperty("PARAMETER3");
-		System.out.println("jenkinParameter = " +parameter3);
 	
 	
 		
