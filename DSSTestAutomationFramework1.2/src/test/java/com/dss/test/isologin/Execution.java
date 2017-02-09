@@ -47,12 +47,13 @@ public class Execution {
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
+		String parameter1 = System.getProperty("parameter1");
+		System.out.println("jenkinParameter = "+parameter1);
 		Properties x = System.getProperties();
 		System.out.println("properties :"+x.getProperty("parameter1"));
 		System.out.println("properties :"+x.getProperty("parameter2"));
 		
-		String parameter1 = System.getProperty("parameter1");
-		System.out.println("jenkinParameter = "+parameter1);
+		
 		driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
