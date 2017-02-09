@@ -49,9 +49,7 @@ public class Execution {
 		//Log.logInit();
 		String parameter1 = System.getProperty("parameter1");
 		System.out.println("jenkinParameter = "+parameter1);
-		Properties x = System.getProperties();
-		System.out.println("properties :"+x.getProperty("parameter1"));
-		System.out.println("properties :"+x.getProperty("parameter2"));
+		
 		
 		
 		driver = new Config().selectBrowser(browser, platform);
