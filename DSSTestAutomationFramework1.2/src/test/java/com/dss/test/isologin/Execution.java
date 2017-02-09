@@ -50,6 +50,8 @@ public class Execution {
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
+		String jenkinParameter = System.getProperty("jenkinParameter");
+		System.out.println("jenkinParameter = "+jenkinParameter);
 		driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
