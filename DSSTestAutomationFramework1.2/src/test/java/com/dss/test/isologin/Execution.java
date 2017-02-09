@@ -48,7 +48,7 @@ public class Execution {
 	public void setup(String browser, String platform) {
 		//Log.logInit();
 		String parameter1 = System.getProperty("parameter1");
-		System.out.println("jenkinParameter = "+parameter1);
+		System.out.println("jenkinParameter = " + parameter1);
 		
 		
 		
