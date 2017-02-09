@@ -51,11 +51,15 @@ public class Execution {
 		System.out.println("jenkinParameter = " +ConfibParameterValues);
 		
 		String[] marketSpecificConfig = ConfibParameterValues.split(" ");
-		for(String each : marketSpecificConfig){
-			System.out.println("Each value :"+each);
+		for(String market : marketSpecificConfig){
+			System.out.println("Each value :"+market);
+			
+			String[] marketConfig = market.split("-");
+			for(String eachConfig : marketConfig){
+				System.out.println(" --- "+eachConfig);
 		}
 		
-		
+		}
 		
 		
 		
