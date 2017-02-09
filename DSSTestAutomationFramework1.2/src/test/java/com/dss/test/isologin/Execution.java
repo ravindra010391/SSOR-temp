@@ -41,18 +41,15 @@ public class Execution {
 	private ExtentReports report;
 	private ExtentTest logger;
 	
-	
-	
-	
-	
-	
+
 	
 	@Parameters({"browser","platform"})
 	@BeforeTest
 	public void setup(String browser, String platform) {
 		//Log.logInit();
 		Properties x = System.getProperties();
-		System.out.println("properties :"+x.getProperty("jenkinParameter"));
+		System.out.println("properties :"+x.getProperty("parameter1"));
+		System.out.println("properties :"+x.getProperty("parameter2"));
 		
 		String jenkinParameter = System.getProperty("jenkinParameter");
 		System.out.println("jenkinParameter = "+jenkinParameter);
