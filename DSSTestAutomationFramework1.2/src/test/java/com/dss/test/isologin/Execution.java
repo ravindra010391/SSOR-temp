@@ -51,8 +51,8 @@ public class Execution {
 		System.out.println("properties :"+x.getProperty("parameter1"));
 		System.out.println("properties :"+x.getProperty("parameter2"));
 		
-		String jenkinParameter = System.getProperty("jenkinParameter");
-		System.out.println("jenkinParameter = "+jenkinParameter);
+		String parameter1 = System.getProperty("parameter1");
+		System.out.println("jenkinParameter = "+parameter1);
 		driver = new Config().selectBrowser(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
