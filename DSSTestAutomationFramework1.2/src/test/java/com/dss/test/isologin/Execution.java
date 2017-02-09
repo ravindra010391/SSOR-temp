@@ -49,7 +49,7 @@ public class Execution {
 		
 		String[] marketSpecificConfig = ConfibParameterValues.split(" ");
 		for(String marketConfigData : marketSpecificConfig){
-			System.out.println("marketConfigData : "+marketConfigData);
+			System.out.println("marketConfigData : " +marketConfigData);
 			xmlConfig.createXMLFile(marketConfigData);
 		}
 	}
