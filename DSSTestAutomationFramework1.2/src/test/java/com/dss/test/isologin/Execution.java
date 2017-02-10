@@ -21,6 +21,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.xml.XmlSuite;
+import org.testng.xml.XmlTest;
 
 import com.dss.test.apputilities.AppUtility;
 import com.dss.test.apputilities.Config;
@@ -44,6 +46,14 @@ public class Execution {
 	
 	@BeforeSuite
 	public void suitConfig(){
+		
+		XmlSuite suite = new XmlSuite();
+		suite.setName("Suit1");
+		
+		XmlTest test = new XmlTest(suite);
+		test.setName("test1");
+		System.out.println("xml suit");
+		
 		String ConfibParameterValues = System.getProperty("CONFIG_PARAMETER");
 		System.out.println("jenkinParameter = " +ConfibParameterValues);
 		
