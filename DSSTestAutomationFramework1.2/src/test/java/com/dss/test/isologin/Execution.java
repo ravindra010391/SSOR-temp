@@ -74,7 +74,7 @@ public class Execution {
 
 	}
 	
-	@Test(enabled = true)
+	@Test(groups={"Regression"}, enabled = true)
 	public void isISOLoginSuccessfull() throws InterruptedException {
 		
 		String testCaseName = "Verify ISO login with valid user";
