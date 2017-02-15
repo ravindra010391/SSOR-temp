@@ -47,13 +47,6 @@ public class Execution {
 	@BeforeSuite
 	public void suitConfig(){
 		
-		XmlSuite suite = new XmlSuite();
-		suite.setName("Suit1");
-		
-		XmlTest test = new XmlTest(suite);
-		test.setName("test1");
-		System.out.println("xml suit");
-		
 		String ConfibParameterValues = System.getProperty("CONFIG_PARAMETER");
 		System.out.println("jenkinParameter = " +ConfibParameterValues);
 		

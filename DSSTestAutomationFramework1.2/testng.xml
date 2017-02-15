@@ -9,5 +9,14 @@
 			<class name="com.dss.test.isologin.Execution" />
 		</classes>
 	</test>
+	
+			<test name="DSS-Regression With Firefox">
+		<parameter name="browser" value="chrome" />
+		<parameter name="platform" value ="windows" />
+		<classes>
+			<class name="com.dss.test.isologin.Execution" />
+		</classes>
+	</test>
+	
 
 </suite>

@@ -26,7 +26,24 @@
 					<target>${jdk.level}</target>
 				</configuration>
   
-</plugin>
+			</plugin>
+			
+	<plugin>  
+   <groupId>org.codehaus.mojo</groupId>  
+   <artifactId>exec-maven-plugin</artifactId>  
+   <version>1.5.0</version>  
+   <executions>  
+    <execution>  
+     <phase>test</phase>  
+     <goals>  
+      <goal>java</goal>  
+     </goals>  
+     <configuration>  
+      <mainClass>com.dss.test.coreutilities.Startup</mainClass>  
+     </configuration>  
+    </execution>  
+   </executions>  
+  </plugin>  
 			
 			<!-- Below plug-in is used to execute tests -->
 			<!-- Below plug-in is used to execute tests -->
@@ -34,12 +51,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
-				<configuration>
-					<suiteXmlFiles>
-						<!-- TestNG suite XML files -->
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
+
 			</plugin>
 		</plugins>
 	</build>
