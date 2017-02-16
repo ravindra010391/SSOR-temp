@@ -64,8 +64,8 @@ public class XmlGenerator {
 
 				String browserName = browserkey.get(browser).toString();
 
-				xmlSuite[i].setParallel(ParallelMode.TESTS);
-				xmlSuite[i].setThreadCount(2);
+				xmlSuite[i].setParallel(ParallelMode.METHODS);
+				xmlSuite[i].setThreadCount(10);
 				xmlSuite[i].setName(objectarray[i].enviroment);
 				xmlSuite[i].setVerbose(2);
 
