@@ -64,7 +64,7 @@ public class Execution {
 
 	}
 	
-	@Test(groups="Regression")
+	@Test()
 	public void isISOLoginSuccessfull() throws InterruptedException {
 		System.out.println("in test case");
 		String testCaseName = "Verify ISO login with valid user";

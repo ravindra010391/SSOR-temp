@@ -10,7 +10,7 @@ import org.testng.xml.XmlSuite;
 
 public class Runner {
 
-	public static void main(String args[]) throws Exception {
+	public void mainTest() throws Exception {
 		List<XmlSuite> suites = XmlGenerator.createXML("SS,STAGE,CHFF,WINDOWS,RG");
 		System.out.println("total suites = " + suites.size());
 		int i = 1;

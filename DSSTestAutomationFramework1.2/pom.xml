@@ -22,7 +22,7 @@
    	 	<groupId>org.testng</groupId>
    		 <artifactId>testng</artifactId>
    		 <scope>compile</scope>
-   		 <version>6.9.13.6</version>
+   		 <version>6.10</version>
 	</dependency>
  </dependencies>
  </dependencyManagement>
@@ -42,7 +42,7 @@
    	 	<groupId>org.testng</groupId>
    		 <artifactId>testng</artifactId>
    		 <scope>compile</scope>
-   		 <version>6.9.13.6</version>
+   		 <version>6.10</version>
 	
    </dependency>
    </dependencies>
@@ -58,8 +58,20 @@
   <artifactId>maven-compiler-plugin</artifactId>
   <version>3.6.1</version>
   <configuration>
+  <includes>
+   <include>com/dss/test/isologin/*.java</include>
+   <include>com/dss/test/flows/*.java</include>
+   <include>com/dss/test/apputilities/*.java</include>
+   <include>com/dss/test/coreutilities/*.java</include>
+   <include>com/dss/test/pageobject/*.java</include>
+   <include>com/dss/test/pages/*.java</include>
+   <include>com/dss/test/runner/*.java</include>
+   
+					
+				</includes>
 					<source>${jdk.level}</source>
 					<target>${jdk.level}</target>
+				
 				</configuration>
   
 			</plugin>
@@ -76,7 +88,7 @@
       <goal>java</goal>  
      </goals>  
      <configuration>  
-      <mainClass>com.dss.test.runner.Runner</mainClass>  
+      <mainClass>com.dss.test.coreutilities.Start</mainClass>  
      </configuration>  
     </execution>  
    </executions>  
@@ -84,12 +96,7 @@
 			
 			<!-- Below plug-in is used to execute tests -->
 			<!-- Below plug-in is used to execute tests -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version>
-
-			</plugin>
+			
 		</plugins>
 	</build>
 
@@ -110,8 +117,8 @@
     <dependency>
    	 	<groupId>org.testng</groupId>
    		 <artifactId>testng</artifactId>
-   		 <scope>compile</scope>
-   		 <version>6.9.13.6</version>
+   		 <scope>test</scope>
+   		 <version>6.10</version>
 	</dependency>
 	<dependency>
     	<groupId>org.seleniumhq.selenium</groupId>
