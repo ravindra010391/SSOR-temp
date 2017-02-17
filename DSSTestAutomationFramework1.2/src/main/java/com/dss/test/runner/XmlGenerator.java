@@ -99,7 +99,7 @@ public class XmlGenerator {
 					// ------
 
 					List<XmlClass> testclasses = new ArrayList<XmlClass>();
-					testclasses.add(new XmlClass("..com.dss.test.isologin.Execution"));
+					testclasses.add(new XmlClass("com.dss.test.isologin.Execution"));
 					xmlTest[j].setClasses(testclasses);
 
 				}
