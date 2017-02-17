@@ -88,7 +88,7 @@
       <goal>java</goal>  
      </goals>  
      <configuration>  
-      <mainClass>com.dss.test.coreutilities.Start</mainClass>  
+      <mainClass>com.dss.test.isologin.demoTest</mainClass>  
      </configuration>  
     </execution>  
    </executions>  
@@ -171,8 +171,6 @@
     <version>3.15</version>
 </dependency>
   </dependencies>
-  
-
   
   
 </project>
