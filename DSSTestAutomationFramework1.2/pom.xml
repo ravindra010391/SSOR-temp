@@ -12,8 +12,44 @@
     <jre.level>1.8</jre.level>
 	<jdk.level>1.8</jdk.level>
   </properties>
+  
+  
+  
+  
+ <dependencyManagement>
+ <dependencies>
+ 	 <dependency>
+   	 	<groupId>org.testng</groupId>
+   		 <artifactId>testng</artifactId>
+   		 <scope>compile</scope>
+   		 <version>6.9.13.6</version>
+	</dependency>
+ </dependencies>
+ </dependencyManagement>
+ 
+ 
  
   <build>
+  <pluginManagement>
+  <plugins>
+  <plugin>  
+   <groupId>org.codehaus.mojo</groupId>  
+   <artifactId>exec-maven-plugin</artifactId>  
+   <version>1.5.0</version>
+   <dependencies>
+   <dependency>
+   
+   	 	<groupId>org.testng</groupId>
+   		 <artifactId>testng</artifactId>
+   		 <scope>compile</scope>
+   		 <version>6.9.13.6</version>
+	
+   </dependency>
+   </dependencies>
+   </plugin> 
+  </plugins>
+  </pluginManagement>
+  
 		<plugins>
 			<!-- Compiler plug-in -->
 			
@@ -31,7 +67,8 @@
 	<plugin>  
    <groupId>org.codehaus.mojo</groupId>  
    <artifactId>exec-maven-plugin</artifactId>  
-   <version>1.5.0</version>  
+   <version>1.5.0</version>
+     
    <executions>  
     <execution>  
      <phase>test</phase>  
@@ -39,7 +76,7 @@
       <goal>java</goal>  
      </goals>  
      <configuration>  
-      <mainClass>com.dss.test.coreutilities.Start</mainClass>  
+      <mainClass>com.dss.test.runner.Runner</mainClass>  
      </configuration>  
     </execution>  
    </executions>  
@@ -73,7 +110,7 @@
     <dependency>
    	 	<groupId>org.testng</groupId>
    		 <artifactId>testng</artifactId>
-   		 <scope>test</scope>
+   		 <scope>compile</scope>
    		 <version>6.9.13.6</version>
 	</dependency>
 	<dependency>

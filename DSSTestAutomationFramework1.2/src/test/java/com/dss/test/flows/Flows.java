@@ -15,5 +15,9 @@ public class Flows {
 		this.driver = driver;
 		homepage = new HomePage(driver);
 	}
+	
+	public void abc(){
+		
+	}
 
 }

@@ -9,12 +9,12 @@ import java.util.Map;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.xpath.objects.XNull;
+
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlGroups;
 import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlRun;
-import org.testng.xml.XmlSuite;
+import org.testng.xml.*;
 import org.testng.xml.XmlTest;
 import org.testng.xml.XmlSuite.ParallelMode;
 
@@ -99,7 +99,7 @@ public class XmlGenerator {
 					// ------
 
 					List<XmlClass> testclasses = new ArrayList<XmlClass>();
-					testclasses.add(new XmlClass("com.dss.test.isologin.Execution"));
+					testclasses.add(new XmlClass("..com.dss.test.isologin.Execution"));
 					xmlTest[j].setClasses(testclasses);
 
 				}
