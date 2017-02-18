@@ -3,23 +3,23 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.dss.test.flows.Flows"/>
-      <class name="com.dss.test.pageobject.HomePageObject"/>
-      <class name="com.dss.test.coreutilities.CoreUtility"/>
-      <class name="com.dss.test.apputilities.AppUtility"/>
-      <class name="com.dss.test.coreutilities.Log"/>
-      <class name="com.dss.test.pageobject.ProfilePageObject"/>
-      <class name="com.dss.test.pages.HomePage"/>
-      <class name="com.dss.test.flows.SSOLoginFlows"/>
-      <class name="com.dss.test.apputilities.Config"/>
-      <class name="com.dss.test.pages.ProfilePage"/>
-      <class name="com.dss.test.flows.ISOLoginFlows"/>
-      <class name="com.dss.test.isologin.Execution"/>
+      <class name="Flows"/>
+      <class name="com.dss.app.pageobject.HomePageObject"/>
+      <class name="com.dss.app.coreutilities.CoreUtility"/>
+      <class name="com.dss.app.apputilities.AppUtility"/>
+      <class name="com.dss.app.coreutilities.Log"/>
+      <class name="com.dss.app.pageobject.ProfilePageObject"/>
+      <class name="com.dss.app.pages.HomePage"/>
+      <class name="SSOLoginFlows"/>
+      <class name="com.dss.app.apputilities.Config"/>
+      <class name="com.dss.app.pages.ProfilePage"/>
+      <class name="ISOLoginFlows"/>
+      <class name="Execution"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.dss.test.isologin.Execution">
+      <class name="Execution">
         <methods>
           <include name="isISOLoginSuccessfull"/>
         </methods>

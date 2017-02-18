@@ -7,7 +7,7 @@
 		<parameter name="platform" value ="windows" />
 		<parameter name="url" value ="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com" />
 		<classes>
-			<class name="com.dss.test.isologin.Execution" />
+			<class name="Execution" />
 		</classes>
 </test>
 	

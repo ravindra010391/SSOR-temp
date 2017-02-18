@@ -9,7 +9,7 @@
     <parameter name="platform" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
     <parameter name="url" value="windows"/>
     <classes>
-      <class name="com.dss.test.isologin.Execution"/>
+      <class name="Execution"/>
     </classes>
   </test> <!-- DSS-Regression With Firefox -->
   <test name="DSS-Regression With Firefox(failed)" parallel="tests">
@@ -17,7 +17,7 @@
     <parameter name="platform" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
     <parameter name="url" value="windows"/>
     <classes>
-      <class name="com.dss.test.isologin.Execution">
+      <class name="Execution">
         <methods>
           <include name="tearDown"/>
           <include name="test1"/>
