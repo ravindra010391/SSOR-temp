@@ -14,15 +14,7 @@
   </properties>
 
   <build>
-  <pluginManagement>
-  <plugins>
-  <plugin>  
-   <groupId>org.codehaus.mojo</groupId>  
-   <artifactId>exec-maven-plugin</artifactId>  
-   <version>1.5.0</version>
-   </plugin> 
-  </plugins>
-  </pluginManagement>
+
 
   <plugins>
 
@@ -45,12 +37,13 @@
 
        <executions>
         <execution>
-         <phase>test</phase>
+         <phase>test-compile</phase>
          <goals>
           <goal>java</goal>
          </goals>
          <configuration>
-          <mainClass>com.dss.app.Runner</mainClass>
+          <mainClass>com.dss.app.test.Runner</mainClass>
+             <classpathScope>test</classpathScope>
          </configuration>
         </execution>
        </executions>

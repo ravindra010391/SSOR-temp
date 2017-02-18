@@ -2,22 +2,22 @@
 <testng-results skipped="0" failed="0" ignored="4" total="4" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="STAGE" duration-ms="5015" started-at="2017-02-18T09:04:26Z" finished-at="2017-02-18T09:04:31Z">
+  <suite name="STAGE" duration-ms="5011" started-at="2017-02-18T10:54:41Z" finished-at="2017-02-18T10:54:46Z">
     <groups>
     </groups>
-    <test name="SS-STAGE: Test execution on Chrome" duration-ms="1" started-at="2017-02-18T09:04:26Z" finished-at="2017-02-18T09:04:26Z">
+    <test name="SS-STAGE: Test execution on Chrome" duration-ms="1" started-at="2017-02-18T10:54:41Z" finished-at="2017-02-18T10:54:41Z">
     </test> <!-- SS-STAGE: Test execution on Chrome -->
-    <test name="SS-STAGE: Test execution on Firefox" duration-ms="0" started-at="2017-02-18T09:04:31Z" finished-at="2017-02-18T09:04:31Z">
-      <class name="Execution">
-        <test-method status="PASS" signature="suitConfig()[pri:0, instance:Execution@63070bab]" name="suitConfig" is-config="true" duration-ms="5" started-at="2017-02-18T14:34:26Z" finished-at="2017-02-18T14:34:26Z">
+    <test name="SS-STAGE: Test execution on Firefox" duration-ms="0" started-at="2017-02-18T10:54:46Z" finished-at="2017-02-18T10:54:46Z">
+      <class name="com.dss.app.test.isologin.TestExecutor">
+        <test-method status="PASS" signature="suitConfig()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@291b4bf5]" name="suitConfig" is-config="true" duration-ms="5" started-at="2017-02-18T16:24:41Z" finished-at="2017-02-18T16:24:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suitConfig -->
-        <test-method status="PASS" signature="cleanup()[pri:0, instance:Execution@63070bab]" name="cleanup" is-config="true" duration-ms="139" started-at="2017-02-18T14:34:36Z" finished-at="2017-02-18T14:34:36Z">
+        <test-method status="PASS" signature="cleanup()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@291b4bf5]" name="cleanup" is-config="true" duration-ms="136" started-at="2017-02-18T16:24:51Z" finished-at="2017-02-18T16:24:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanup -->
-      </class> <!-- com.dss.test.isologin.Execution -->
+      </class> <!-- com.dss.app.test.isologin.TestExecutor -->
     </test> <!-- SS-STAGE: Test execution on Firefox -->
   </suite> <!-- STAGE -->
 </testng-results>

@@ -37,7 +37,7 @@ public class TestExecutor {
 	
 	@BeforeSuite(alwaysRun = true)
 	public void suitConfig(){
-		
+		System.out.println("Starting TestExecutor ====> ");
 		String ConfibParameterValues = System.getProperty("CONFIG_PARAMETER");
 		System.out.println("jenkinParameter = " +ConfibParameterValues);
 		

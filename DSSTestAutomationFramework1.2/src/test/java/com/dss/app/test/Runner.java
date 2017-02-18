@@ -1,4 +1,4 @@
-package com.dss.app;
+package com.dss.app.test;
 
 import com.dss.app.runner.XmlGenerator;
 import org.testng.TestNG;
