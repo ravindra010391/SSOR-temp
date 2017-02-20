@@ -224,3 +224,16 @@
 2017-02-20 20:37:32 INFO  FILE_LOGGER:46 - Redirecting to Profile page
 2017-02-20 20:37:37 INFO  FILE_LOGGER:46 - Getting 'Preferred Email' on Profile Page
 2017-02-20 20:37:37 INFO  FILE_LOGGER:46 - Preferred Email matched with the User's Email 
+2017-02-20 21:13:12 INFO  FILE_LOGGER:26 - ****************************************************************************************
+2017-02-20 21:13:12 INFO  FILE_LOGGER:28 - ------------------------------ Verify ISO login with valid user -------------------------------------
+2017-02-20 21:13:12 INFO  FILE_LOGGER:30 - ****************************************************************************************
+2017-02-20 21:13:12 INFO  FILE_LOGGER:46 - Clicked on Login Button of Top NAV
+2017-02-20 21:13:14 INFO  FILE_LOGGER:46 - Entered Email id
+2017-02-20 21:13:15 INFO  FILE_LOGGER:46 - Entered Password
+2017-02-20 21:13:15 INFO  FILE_LOGGER:46 - Clicked on Login button at the login panel
+2017-02-20 21:13:26 INFO  FILE_LOGGER:46 - Clicked on User Account menu
+2017-02-20 21:13:31 INFO  FILE_LOGGER:46 - Clicked on Profile link of account menu drop-down
+2017-02-20 21:13:31 INFO  FILE_LOGGER:46 - Redirecting to Profile page
+2017-02-20 21:13:31 INFO  FILE_LOGGER:46 - Getting 'Preferred Email' on Profile Page
+2017-02-20 21:13:31 INFO  FILE_LOGGER:46 - Preferred Email matched with the User's Email 
+2017-02-20 21:13:31 INFO  FILE_LOGGER:38 - ****************************-E---N---D-*******************************************
