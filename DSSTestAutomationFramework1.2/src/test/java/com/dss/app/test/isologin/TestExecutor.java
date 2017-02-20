@@ -99,7 +99,7 @@ public class TestExecutor {
 		}
 
 		report.endTest(logger);
-		Log.endTestCase();
+		//Log.endTestCase();
 		driver.quit();
 		System.out.println("after method");
 	}

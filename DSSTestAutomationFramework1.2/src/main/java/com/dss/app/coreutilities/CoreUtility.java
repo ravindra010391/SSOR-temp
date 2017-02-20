@@ -3,7 +3,10 @@ package com.dss.app.coreutilities;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.xml.XmlSuite;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class CoreUtility {
@@ -88,6 +91,15 @@ public class CoreUtility {
 		}catch(InterruptedException e){}
 		js.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element); 
 		 
+	}
+	
+	public static void createPhysicalXMLFileOfSuite(XmlSuite suite, String suiteName) throws IOException{
+		File file = new File(suiteName);
+		System.out.println("file" + file);
+		FileWriter writer = new FileWriter(file);
+		writer.write(suite.toXml());
+		writer.close();
+		
 	}
 
 }

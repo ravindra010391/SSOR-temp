@@ -2,6 +2,7 @@ package com.dss.app.runner;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,11 +10,10 @@ import java.util.Map;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import org.testng.xml.XmlClass;
 import org.testng.xml.*;
-import org.testng.xml.XmlTest;
 import org.testng.xml.XmlSuite.ParallelMode;
+
+import com.dss.app.coreutilities.CoreUtility;
 
 public class XmlGenerator {
 	
@@ -55,7 +55,7 @@ public class XmlGenerator {
 			objectarray[i].groups = splitStringWith2Char(CommaSplitSubGroup[4]);
 			
 			// Creating suite based on Browser
-
+			
 			xmlSuite[i] = new XmlSuite();
 			for (String browser : objectarray[i].browsers) {
 
@@ -166,6 +166,16 @@ public class XmlGenerator {
 	}	
 	return marketkey;
 }
+	
+	public static void createParentSuite(List<String> allRunTimeXML) throws IOException{
+		
+		XmlSuite parentSuite = new XmlSuite();
+		parentSuite.setName("TestNG");
+		parentSuite.setThreadCount(1);
+		parentSuite.setSuiteFiles(allRunTimeXML);
+		
+		CoreUtility.createPhysicalXMLFileOfSuite(parentSuite, "TestNG.xml");
+	}
 
 
 }
