@@ -15,7 +15,7 @@ public class Runner {
 		
 		String confit_Parameter = System.getProperty("CONFIG_PARAMETER");
 
-		List<XmlSuite> suites = XmlGenerator.createXML("confit_Parameter");
+		List<XmlSuite> suites = XmlGenerator.createXML("SS,STAGE,CRFF,WINDOWS,RG");
 		System.out.println("total suites = " + suites.size());
 
 		int i = 1;
