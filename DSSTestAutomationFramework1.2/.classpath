@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry including="com/dss/test/isologin/*.java|com/dss/test/flows/*.java|com/dss/test/apputilities/*.java|com/dss/test/coreutilities/*.java|com/dss/test/pageobject/*.java|com/dss/test/pages/*.java|com/dss/test/runner/*.java" kind="src" output="target/classes" path="src/main/java">
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
