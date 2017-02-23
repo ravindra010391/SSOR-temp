@@ -3,6 +3,9 @@ package com.dss.app.pageobject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/*
+ * This class will contain all the locators of the HOME PAGE
+ */
 public class HomePageObject {
 
 	@FindBy(xpath = "html/body/header/div[1]/div[1]/a[2]")
@@ -23,28 +26,21 @@ public class HomePageObject {
 	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[1]/div")
 	public static WebElement btn_Cancel;
 
-	//Advertise pop up close button
+	// Advertise pop up close button
 	@FindBy(xpath = ".//*[@id='checkm8Ad_4']")
 	public static WebElement btn_AdClose;
-	
-	//Navigation links for logged in users 
-	@FindBy(xpath  = "html/body/header/div[1]/div[1]/a[4]")
+
+	// Navigation links for logged in users
+	@FindBy(xpath = "html/body/header/div[1]/div[1]/a[4]")
 	public static WebElement icon_User;
-	
+
 	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[1]/a")
 	public static WebElement link_ProfilePage;
-	
-	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[2]/a" )
+
+	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[2]/a")
 	public static WebElement link_Newsletter;
-	
+
 	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[3]/a")
 	public static WebElement link_SignOut;
-	
-	
-	// SSO Login : social share icons
-	//@FindBy;
-	
-
-	
 
 }

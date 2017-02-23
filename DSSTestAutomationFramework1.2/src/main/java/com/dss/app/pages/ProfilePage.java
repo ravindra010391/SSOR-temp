@@ -9,36 +9,30 @@ import com.dss.app.pageobject.ProfilePageObject;
 
 public class ProfilePage {
 
-	
-    private WebDriver driver;
+	private WebDriver driver;
 
-    public ProfilePage(WebDriver driver) {
-           this.driver = driver;
-           PageFactory.initElements(driver, ProfilePageObject.class);
-       	  Log.logInit();
-    }
+	public ProfilePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, ProfilePageObject.class);
+		Log.logInit();
+	}
 
-    //**********************PUBLIC METHODS******************************************
-    public boolean isExpectedUserLogged(String emailId){
+	public boolean isExpectedUserLogged(String emailId) {
 
-           boolean isSuccess = false;
-           if(emailId.equalsIgnoreCase(getPreferredEmail())){
-                  isSuccess= true;
-                  Log.info("Preferred Email matched with the User's Email ");
-           }
-              return isSuccess;
-    }
+		boolean isSuccess = false;
+		if (emailId.equalsIgnoreCase(getPreferredEmail())) {
+			isSuccess = true;
+			Log.info("Preferred Email matched with the User's Email ");
+		}
+		return isSuccess;
+	}
 
-
-   //**********************PRIVATE METHODS******************************************
-    private String getPreferredEmail() {
-		CoreUtility.waitForElementPresent(ProfilePageObject.preferredEmail, driver);
+	// **********************PRIVATE METHODS****************************
+	private String getPreferredEmail() {
+		CoreUtility.waitForElementPresent(ProfilePageObject.preferredEmail,
+				driver);
 		Log.info("Getting 'Preferred Email' on Profile Page");
 		return ProfilePageObject.preferredEmail.getText();
 	}
-    
-    
-    
-    
 
 }

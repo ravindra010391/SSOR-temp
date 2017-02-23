@@ -14,26 +14,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.dss.app.coreutilities.CoreUtility;
+import com.dss.app.coreutilities.Log;
 
 public class AppUtility {
 
+	// This method will close the advertisement if it is displayed
 	public static void closeAds(WebElement element, WebDriver driver) {
 
 		try {
 			CoreUtility.waitForElementPresent(element, driver);
 			if (element != null) {
-				System.out.println("Ads present");
 				CoreUtility.clickOnElement(element);
+				Log.info("Advertisement is present and closed");
 			}
 		}
-
 		catch (Exception e) {
-			System.out.println("Ads not displayed");
+			Log.warn("Advertisement is not displayed");
 		}
-
-
 	}
 
+	// This method will generate random ISO email ID
 	public static String emailGeneratorISO() {
 		String emailId;
 		Random random = new Random();
@@ -45,54 +45,6 @@ public class AppUtility {
 
 		emailId = "ISO" + "_" + currentdate + "_" + randomnum + "@SSOR.com";
 		return emailId;
-	}
-
-	public static String passwordGeneratorISO() {
-
-		return "Tribune1";
-	}
-
-	public static String GetSSOEmailID(String SSO) throws IOException {
-
-		String emailID = "";
-		File CredentialDetails = new File(
-				System.getProperty("user.dir") + "\\src\\test\\resources\\LoginCredentials.properties");
-		FileInputStream inputstream = new FileInputStream(CredentialDetails);
-		Properties prop = new Properties();
-		prop.load(inputstream);
-
-		Enumeration enumkey = prop.keys();
-		while (enumkey.hasMoreElements()) {
-
-			String keys = (String) enumkey.nextElement();
-			if (keys.equalsIgnoreCase(SSO)) {
-				emailID = prop.getProperty(SSO);
-			}
-		}
-
-		inputstream.close();
-		return emailID;
-	}
-// this is test conflict
-	public static String GetSSOPassword(String SSO) throws IOException {
-		String password = "";
-		String Passwordkey = SSO.replace("Id", "Password");
-		File CredentialDetails = new File(
-				System.getProperty("user.dir") + "\\src\\test\\resources\\LoginCredentials.properties");
-		FileInputStream inputstream = new FileInputStream(CredentialDetails);
-		Properties prop = new Properties();
-		prop.load(inputstream);
-
-		Enumeration enumkey = prop.keys();
-		while (enumkey.hasMoreElements()) {
-
-			String keys = (String) enumkey.nextElement();
-			if (keys.equalsIgnoreCase(Passwordkey)) {
-				password = prop.getProperty(Passwordkey);
-			}
-		}
-		inputstream.close();
-		return password;
 	}
 
 }

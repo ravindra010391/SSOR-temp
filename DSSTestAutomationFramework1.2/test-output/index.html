@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-STAGE">
-                    <span>[unset file name]</span>
+                    <span>C:\Users\ravindram\git\SS-SSORTestAutomation-JenkinDemo\DSSTestAutomationFramework1.2\RuntimeXMLSuite1.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -147,33 +147,34 @@
         </div> <!-- panel STAGE -->
         <div panel-name="test-xml-STAGE" class="panel">
           <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\ravindram\git\SS-SSORTestAutomation-JenkinDemo\DSSTestAutomationFramework1.2\RuntimeXMLSuite1.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;1&quot; verbose=&quot;2&quot; name=&quot;STAGE&quot; parallel=&quot;tests&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;2&quot; name=&quot;STAGE&quot;&gt;
   &lt;groups&gt;
     &lt;run&gt;
       &lt;include name=&quot;Regression&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
-  &lt;test name=&quot;SS-STAGE: Test execution on Chrome&quot;&gt;
+  &lt;test name=&quot;LA-STAGE: Test execution on Chrome&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
-    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.sun-sentinel.stage.tribdev.com&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com&quot;/&gt;
     &lt;parameter name=&quot;platform&quot; value=&quot;WINDOWS&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.dss.app.test.isologin.TestExecutor&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- SS-STAGE: Test execution on Chrome --&gt;
-  &lt;test name=&quot;SS-STAGE: Test execution on Firefox&quot;&gt;
+  &lt;/test&gt; &lt;!-- LA-STAGE: Test execution on Chrome --&gt;
+  &lt;test name=&quot;LA-STAGE: Test execution on Firefox&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Firefox&quot;/&gt;
-    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.sun-sentinel.stage.tribdev.com&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com&quot;/&gt;
     &lt;parameter name=&quot;platform&quot; value=&quot;WINDOWS&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.dss.app.test.isologin.TestExecutor&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- SS-STAGE: Test execution on Firefox --&gt;
+  &lt;/test&gt; &lt;!-- LA-STAGE: Test execution on Firefox --&gt;
 &lt;/suite&gt; &lt;!-- STAGE --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,10 +186,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">SS-STAGE: Test execution on Chrome (1 class)</span>
+                <span class="test-name">LA-STAGE: Test execution on Chrome (1 class)</span>
               </li>
               <li>
-                <span class="test-name">SS-STAGE: Test execution on Firefox (1 class)</span>
+                <span class="test-name">LA-STAGE: Test execution on Firefox (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -226,16 +227,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'isISOLoginSuccessfull')
 data.setCell(0, 2, 'com.dss.app.test.isologin.TestExecutor')
-data.setCell(0, 3, 20550);
+data.setCell(0, 3, 24758);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'isISOLoginSuccessfull')
 data.setCell(1, 2, 'com.dss.app.test.isologin.TestExecutor')
-data.setCell(1, 3, 19452);
+data.setCell(1, 3, 18857);
 window.suiteTableData['STAGE']= { tableData: data, tableDiv: 'times-div-STAGE'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 40 seconds</span>
+              <span class="suite-total-time">Total running time: 43 seconds</span>
               <div id="times-div-STAGE">
               </div> <!-- times-div-STAGE -->
             </div> <!-- times-div -->
@@ -272,36 +273,36 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.dss.app.test.isologin.TestExecutor</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">suitConfig</span>
+                <span class="method-name">suiteSetUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">setup(Chrome, WINDOWS, http://nguxbeta:nguxtr!b@ngux.sun-sentinel.stage.tribdev.com)</span>
-                <span class="method-start">39 ms</span>
+                <span class="method-name">methodSetUp(Chrome, WINDOWS, http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com)</span>
+                <span class="method-start">31 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">isISOLoginSuccessfull</span>
-                <span class="method-start">63687 ms</span>
+                <span class="method-start">99807 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pr...)</span>
-                <span class="method-start">83139 ms</span>
+                <span class="method-name">methodTearDown([TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pr...)</span>
+                <span class="method-start">118664 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setup(Firefox, WINDOWS, http://nguxbeta:nguxtr!b@ngux.sun-sentinel.stage.tribdev.com)</span>
-                <span class="method-start">84326 ms</span>
+                <span class="method-name">methodSetUp(Firefox, WINDOWS, http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com)</span>
+                <span class="method-start">120360 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">isISOLoginSuccessfull</span>
-                <span class="method-start">135583 ms</span>
+                <span class="method-start">170543 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pr...)</span>
-                <span class="method-start">156133 ms</span>
+                <span class="method-name">methodTearDown([TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pr...)</span>
+                <span class="method-start">195305 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
-                <span class="method-name">cleanup</span>
-                <span class="method-start">158187 ms</span>
+                <span class="method-name">suiteTearDown</span>
+                <span class="method-start">198485 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -3,44 +3,42 @@ package com.dss.app.coreutilities;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.dss.app.apputilities.GlobalValues;
+
+/*
+ * This class is to log the information in Log4J log file
+ */
 
 public class Log {
 
 	public static Logger Log;
 	
+	
 	public static void logInit(){
 		//BasicConfigurator.configure();
-		PropertyConfigurator.configure(System.getProperty("user.dir")+"\\src\\main\\java\\log4j.properties");
-		//CONSOLE_LOGGER = Logger.getLogger("CONSOLE_LOGGER");
+		PropertyConfigurator.configure(GlobalValues.logConfigFilePath);
 		Log = Logger.getLogger("FILE_LOGGER");
 	}
 
-	 // Initialize Log4j logs
-	 	
-
-	  // This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
-
+	
 	  public static void startTestCase(String sTestCaseName){
 
 
-	 	Log.info("****************************************************************************************");
+	 	Log.info("----------------------------------------------------------------------------------------");
 
 	 	Log.info("------------------------------ "+sTestCaseName+ " -------------------------------------");
 
-	 	Log.info("****************************************************************************************");
+	 	Log.info("----------------------------------------------------------------------------------------");
 
 	 	}
-
-	 	//This is to print log for the ending of the test case
 
 	  public static void endTestCase(){
 
-	 	Log.info("****************************"+"-E---N---D-"+"*******************************************");
+	 	Log.info("--------------------------------- "+"-E---N---D-"+"------------------------------------");
 
 	 	}
 
-	 	// Need to create these methods, so that they can be called  
-
+	 
 	  public static void info(String message) {
 
 	 		Log.info(message);
@@ -70,9 +68,6 @@ public class Log {
 	     Log.debug(message);
 
 	 	}
-
-	 
-
 		
 }
 

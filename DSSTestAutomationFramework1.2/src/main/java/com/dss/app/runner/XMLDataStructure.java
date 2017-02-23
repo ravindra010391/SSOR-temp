@@ -1,4 +1,7 @@
 package com.dss.app.runner;
+/*
+ * This is a data structure for XMLCreater
+ */
 
 public class XMLDataStructure {
 	

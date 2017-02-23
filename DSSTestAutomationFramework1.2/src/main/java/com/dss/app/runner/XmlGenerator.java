@@ -10,39 +10,43 @@ import java.util.Map;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.xml.*;
-import org.testng.xml.XmlSuite.ParallelMode;
+import org.testng.xml.XmlClass;
+import org.testng.xml.XmlSuite;
+import org.testng.xml.XmlTest;
 
+import com.dss.app.apputilities.GlobalValues;
 import com.dss.app.coreutilities.CoreUtility;
 
-public class XmlGenerator {
-	
-	public static Map marketkey, groupkey, browserkey;
-	
+/*
+ * This class will create a dynamic XML file based on the Jenkin parameter
+ */
 
-	public static List<XmlSuite> createXML(String JenkinString) throws Exception {
+public class XmlGenerator {
+
+	public static Map marketkey, groupkey, browserkey;
+
+	public static List<XmlSuite> createXML(String JenkinString)
+			throws Exception {
+
 		List<XmlSuite> suites = new ArrayList<XmlSuite>();
 		int jenkinGroupCount = splitStringWithSpace(JenkinString).length;
 		XmlSuite[] xmlSuite = new XmlSuite[jenkinGroupCount];
 		XMLDataStructure[] objectarray = new XMLDataStructure[jenkinGroupCount];
 		String[] jenkinSplitGroup = splitStringWithSpace(JenkinString);
 		marketkey = loadMarketKeyResolver("MarketKeywords");
-		groupkey= loadMarketKeyResolver("Groups");
-		browserkey= loadMarketKeyResolver("Browsers");
+		groupkey = loadMarketKeyResolver("Groups");
+		browserkey = loadMarketKeyResolver("Browsers");
 
-		// For iterating group
-
+		// For iterating through groups
 		for (int i = 0; i < jenkinGroupCount; i++) {
-			// xmlSuite[k] = new XmlSuite();
-
 			objectarray[i] = new XMLDataStructure();
 			String[] CommaSplitSubGroup = splitStringWithComma(jenkinSplitGroup[i]);
 
+			// This will fetch all the market names
 			if (CommaSplitSubGroup[0].equalsIgnoreCase("all")) {
 
-				// add a code which fetch all the keyword from excel in string
-				// format
-				objectarray[i].markets =splitStringWith2Char(marketkey.keySet().toString().replaceAll("[^A-Za-z]+", ""));
+				objectarray[i].markets = splitStringWith2Char(marketkey
+						.keySet().toString().replaceAll("[^A-Za-z]+", ""));
 			}
 
 			else {
@@ -53,39 +57,36 @@ public class XmlGenerator {
 			objectarray[i].browsers = splitStringWith2Char(CommaSplitSubGroup[2]);
 			objectarray[i].platform = CommaSplitSubGroup[3];
 			objectarray[i].groups = splitStringWith2Char(CommaSplitSubGroup[4]);
-			
-			// Creating suite based on Browser
-			
+
+			// Creating <Suite> tag for each Jenkin parameter token
 			xmlSuite[i] = new XmlSuite();
+			// Creating <Test> tag for each browser
 			for (String browser : objectarray[i].browsers) {
 
 				String browserName = browserkey.get(browser).toString();
 
-				xmlSuite[i].setParallel(ParallelMode.TESTS);
+				// xmlSuite[i].setParallel(ParallelMode.TESTS);
 				xmlSuite[i].setThreadCount(1);
 				xmlSuite[i].setName(objectarray[i].enviroment);
 				xmlSuite[i].setVerbose(2);
 
 				XmlTest[] xmlTest = new XmlTest[objectarray[i].markets.length];
 
-				// creating test based on market
 				for (int j = 0; j < objectarray[i].markets.length; j++) {
 
-					System.out.println(objectarray[i].markets[j]);
-					System.out.println(objectarray[i].enviroment);
-					System.out.println(browser);
-					System.out.println(objectarray[i].platform);
-
-					String url = createURL(objectarray[i].enviroment, objectarray[i].markets[j]);
+					String url = createURL(objectarray[i].enviroment,
+							objectarray[i].markets[j]);
 
 					xmlTest[j] = new XmlTest(xmlSuite[i]);
-					xmlTest[j].setName(objectarray[i].markets[j] + "-" + objectarray[i].enviroment+": Test execution on "+ browserName );
+					xmlTest[j].setName(objectarray[i].markets[j] + "-"
+							+ objectarray[i].enviroment
+							+ ": Test execution on " + browserName);
 					Map<String, String> setTestParamater = new HashMap<String, String>();
 					setTestParamater.put("url", url);
 					setTestParamater.put("browser", browserName);
 					setTestParamater.put("platform", objectarray[i].platform);
 					xmlTest[j].setParameters(setTestParamater);
-					// ----
+
 					List<String> groups = new ArrayList<String>();
 					for (String group : objectarray[i].groups) {
 						groups.add(groupkey.get(group).toString());
@@ -93,10 +94,9 @@ public class XmlGenerator {
 
 					xmlSuite[i].setIncludedGroups(groups);
 
-					// ------
-
 					List<XmlClass> testclasses = new ArrayList<XmlClass>();
-					testclasses.add(new XmlClass("com.dss.app.test.isologin.TestExecutor"));
+					testclasses.add(new XmlClass(
+							"com.dss.app.test.isologin.TestExecutor"));
 					xmlTest[j].setClasses(testclasses);
 
 				}
@@ -111,71 +111,71 @@ public class XmlGenerator {
 		return suites;
 
 	}
-	
-	
-	
-	
-	
-	public static String[] splitStringWithSpace(String jenkinArray){
+
+	// -----------XML Generator supporting
+	// methods----------------------------------
+
+	public static String[] splitStringWithSpace(String jenkinArray) {
 		String[] split = jenkinArray.split("\\s+");
 		return split;
 	}
-	
-	public static String[] splitStringWithComma(String singleJenkinArray){
+
+	public static String[] splitStringWithComma(String singleJenkinArray) {
 		String[] split = singleJenkinArray.split(",");
 		return split;
 	}
 
-	public static String[] splitStringWith2Char(String str){
+	public static String[] splitStringWith2Char(String str) {
 		String[] splitstr = null;
-		splitstr= str.split("(?<=\\G..)");
+		splitstr = str.split("(?<=\\G..)");
 		return splitstr;
 	}
-	
-	public static String createURL(String env, String market) throws Exception{
-		String url="";
+
+	public static String createURL(String env, String market) throws Exception {
+		String url = "";
 		String marketname = marketkey.get(market).toString();
-		switch(env.toUpperCase()){
+		switch (env.toUpperCase()) {
 		case "STAGE":
-			url = "http://nguxbeta:nguxtr!b@ngux."+marketname+".stage.tribdev.com";
+			url = "http://nguxbeta:nguxtr!b@ngux." + marketname
+					+ ".stage.tribdev.com";
 			break;
-			
+
 		case "PROD":
-			url = "http://www."+marketname+".com";
+			url = "http://www." + marketname + ".com";
 			break;
-			
-			default :
+
+		default:
 			System.out.println("Invalid enviroment");
 		}
-		
+
 		return url;
 	}
 
+	public static Map<String, String> loadMarketKeyResolver(String sheetname)
+			throws Exception {
+		Map<String, String> marketkey = new HashMap<String, String>();
+		FileInputStream fis = new FileInputStream(new File(GlobalValues.excelPath));
 
-	public static Map<String,String> loadMarketKeyResolver(String sheetname) throws Exception{
-	Map<String,String> marketkey = new HashMap<String,String>();
-	FileInputStream fis = new FileInputStream(new File((System.getProperty("user.dir"))+"/TestData.xlsx"));
-	
-	
-	XSSFWorkbook workbook = new XSSFWorkbook(fis);
-	XSSFSheet sheet =workbook.getSheet(sheetname);
-	int rowcount = sheet.getLastRowNum();
-	
-	for(int i=1;i<=rowcount;i++){
-		marketkey.put(sheet.getRow(i).getCell(0).toString(),sheet.getRow(i).getCell(1).toString());
-	}	
-	return marketkey;
-}
-	
-	public static void createParentSuite(List<String> allRunTimeXML) throws IOException{
-		
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet sheet = workbook.getSheet(sheetname);
+		int rowcount = sheet.getLastRowNum();
+
+		for (int i = 1; i <= rowcount; i++) {
+			marketkey.put(sheet.getRow(i).getCell(0).toString(), sheet
+					.getRow(i).getCell(1).toString());
+		}
+		return marketkey;
+	}
+
+	public static void createParentSuite(List<String> allRunTimeXML)
+			throws IOException {
+
 		XmlSuite parentSuite = new XmlSuite();
 		parentSuite.setName("TestNG");
 		parentSuite.setThreadCount(1);
 		parentSuite.setSuiteFiles(allRunTimeXML);
-		
+
 		CoreUtility.createPhysicalXMLFileOfSuite(parentSuite, "TestNG.xml");
 	}
-
 
 }
