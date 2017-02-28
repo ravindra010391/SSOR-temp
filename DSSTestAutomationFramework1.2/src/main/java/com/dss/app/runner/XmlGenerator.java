@@ -12,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;
+import org.testng.xml.XmlSuite.ParallelMode;
 import org.testng.xml.XmlTest;
 
 import com.dss.app.apputilities.GlobalValues;
@@ -60,15 +61,23 @@ public class XmlGenerator {
 
 			// Creating <Suite> tag for each Jenkin parameter token
 			xmlSuite[i] = new XmlSuite();
+			//xmlSuite[i].setParallel(ParallelMode.TESTS);
+		    xmlSuite[i].setThreadCount(1);
+			xmlSuite[i].setName(objectarray[i].enviroment);
+			xmlSuite[i].setVerbose(2);
+			
+			List<String> groups = new ArrayList<String>();
+			for (String group : objectarray[i].groups) {
+				groups.add(groupkey.get(group).toString());
+			}
+
+			xmlSuite[i].setIncludedGroups(groups);
 			// Creating <Test> tag for each browser
 			for (String browser : objectarray[i].browsers) {
 
 				String browserName = browserkey.get(browser).toString();
 
-				// xmlSuite[i].setParallel(ParallelMode.TESTS);
-				xmlSuite[i].setThreadCount(1);
-				xmlSuite[i].setName(objectarray[i].enviroment);
-				xmlSuite[i].setVerbose(2);
+
 
 				XmlTest[] xmlTest = new XmlTest[objectarray[i].markets.length];
 
@@ -87,12 +96,7 @@ public class XmlGenerator {
 					setTestParamater.put("platform", objectarray[i].platform);
 					xmlTest[j].setParameters(setTestParamater);
 
-					List<String> groups = new ArrayList<String>();
-					for (String group : objectarray[i].groups) {
-						groups.add(groupkey.get(group).toString());
-					}
 
-					xmlSuite[i].setIncludedGroups(groups);
 
 					List<XmlClass> testclasses = new ArrayList<XmlClass>();
 					testclasses.add(new XmlClass(

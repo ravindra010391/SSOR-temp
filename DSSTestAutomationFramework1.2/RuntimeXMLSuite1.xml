@@ -6,21 +6,20 @@
       <include name="Regression"/>
     </run>
   </groups>
-  <test name="LA-STAGE: Test execution on Chrome">
+  <test name="MC-STAGE: Test execution on Chrome">
     <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
     <parameter name="platform" value="WINDOWS"/>
     <classes>
       <class name="com.dss.app.test.isologin.TestExecutor"/>
     </classes>
-  </test> <!-- LA-STAGE: Test execution on Chrome -->
-  
-  <test name="LA-STAGE: Test execution on Firefox">
+  </test> <!-- MC-STAGE: Test execution on Chrome -->
+  <test name="MC-STAGE: Test execution on Firefox">
     <parameter name="browser" value="Firefox"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
     <parameter name="platform" value="WINDOWS"/>
     <classes>
       <class name="com.dss.app.test.isologin.TestExecutor"/>
     </classes>
-  </test> <!-- LA-STAGE: Test execution on Firefox -->
+  </test> <!-- MC-STAGE: Test execution on Firefox -->
 </suite> <!-- STAGE -->
