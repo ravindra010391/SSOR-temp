@@ -70,3 +70,31 @@
 2017-02-28 14:12:04 INFO  FILE_LOGGER:44 - Getting 'Preferred Email' on Profile Page
 2017-02-28 14:12:04 INFO  FILE_LOGGER:44 - Preferred Email matched with the User's Email 
 2017-02-28 14:13:01 WARN  FILE_LOGGER:50 - Advertisement is not displayed
+2017-02-28 14:15:15 WARN  FILE_LOGGER:50 - Advertisement is not displayed
+2017-02-28 14:15:15 INFO  FILE_LOGGER:27 - ----------------------------------------------------------------------------------------
+2017-02-28 14:15:15 INFO  FILE_LOGGER:29 - ------------------------------ Verify ISO login with valid user -------------------------------------
+2017-02-28 14:15:15 INFO  FILE_LOGGER:31 - ----------------------------------------------------------------------------------------
+2017-02-28 14:15:16 INFO  FILE_LOGGER:44 - Clicked on Login Button of Top NAV
+2017-02-28 14:15:18 INFO  FILE_LOGGER:44 - Entered Email id
+2017-02-28 14:15:18 INFO  FILE_LOGGER:44 - Entered Password
+2017-02-28 14:15:19 INFO  FILE_LOGGER:44 - Clicked on Login button at the login panel
+2017-02-28 14:15:29 INFO  FILE_LOGGER:44 - Clicked on User Account menu
+2017-02-28 14:15:35 INFO  FILE_LOGGER:44 - Clicked on Profile link of account menu drop-down
+2017-02-28 14:15:35 INFO  FILE_LOGGER:44 - Redirecting to Profile page
+2017-02-28 14:15:36 INFO  FILE_LOGGER:44 - Getting 'Preferred Email' on Profile Page
+2017-02-28 14:15:36 INFO  FILE_LOGGER:44 - Preferred Email matched with the User's Email 
+2017-02-28 14:16:40 WARN  FILE_LOGGER:50 - Advertisement is not displayed
+2017-02-28 14:17:32 WARN  FILE_LOGGER:50 - Advertisement is not displayed
+2017-02-28 14:17:32 INFO  FILE_LOGGER:27 - ----------------------------------------------------------------------------------------
+2017-02-28 14:17:32 INFO  FILE_LOGGER:29 - ------------------------------ Verify ISO login with valid user -------------------------------------
+2017-02-28 14:17:32 INFO  FILE_LOGGER:31 - ----------------------------------------------------------------------------------------
+2017-02-28 14:17:32 INFO  FILE_LOGGER:44 - Clicked on Login Button of Top NAV
+2017-02-28 14:17:34 INFO  FILE_LOGGER:44 - Entered Email id
+2017-02-28 14:17:34 INFO  FILE_LOGGER:44 - Entered Password
+2017-02-28 14:17:35 INFO  FILE_LOGGER:44 - Clicked on Login button at the login panel
+2017-02-28 14:17:46 INFO  FILE_LOGGER:44 - Clicked on User Account menu
+2017-02-28 14:17:46 INFO  FILE_LOGGER:44 - Clicked on Profile link of account menu drop-down
+2017-02-28 14:17:46 INFO  FILE_LOGGER:44 - Redirecting to Profile page
+2017-02-28 14:17:50 INFO  FILE_LOGGER:44 - Getting 'Preferred Email' on Profile Page
+2017-02-28 14:17:50 INFO  FILE_LOGGER:44 - Preferred Email matched with the User's Email 
+2017-02-28 14:18:41 WARN  FILE_LOGGER:50 - Advertisement is not displayed
