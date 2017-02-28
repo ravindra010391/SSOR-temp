@@ -17,6 +17,7 @@ import com.dss.app.apputilities.AppUtility;
 import com.dss.app.apputilities.Config;
 import com.dss.app.apputilities.GlobalValues;
 import com.dss.app.coreutilities.CoreUtility;
+import com.dss.app.coreutilities.Log;
 import com.dss.app.pageobject.HomePageObject;
 import com.dss.app.test.isoflows.ISOLoginFlows;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -76,6 +77,7 @@ public class BaseTest {
 		}
 
 		report.endTest(logger);
+		Log.endTestCase();
 		report.flush();
 		driver.quit();
 

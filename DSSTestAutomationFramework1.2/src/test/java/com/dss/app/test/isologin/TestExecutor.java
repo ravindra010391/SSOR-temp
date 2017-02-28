@@ -24,6 +24,7 @@ public class TestExecutor extends BaseTest {
 
 		Assert.assertTrue(isSuccess);
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
+	
 	}
 
 
