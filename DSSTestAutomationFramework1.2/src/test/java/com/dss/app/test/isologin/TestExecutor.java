@@ -26,18 +26,5 @@ public class TestExecutor extends BaseTest {
 		logger.log(LogStatus.PASS, "ISO user logged in successfully");
 	}
 
-	@Test(groups = { "Regression" })
-	public void test1() throws InterruptedException {
-
-		logger = report.startTest("Test case 2");
-		logger.log(LogStatus.INFO, "Step 1");
-		logger.log(LogStatus.INFO, "Step 2");
-		logger.log(LogStatus.INFO, "Step 3");
-
-		Assert.assertTrue(false);
-		logger.log(LogStatus.FAIL, "Failed");
-		
-
-	}
 
 }
