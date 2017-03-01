@@ -18,7 +18,8 @@ public class TestExecutor extends BaseTest {
 		String testCaseName = "Verify ISO login with valid user";
 		logger = report.startTest(testCaseName);
 		Log.startTestCase(testCaseName);
-
+		
+		//Parameters are hardcoded as this is sample test case. We will be fetching test data from excel in future
 		boolean isSuccess = isoLoginFlow.isISOLoginSuccess(logger,
 				"test1test1@gmail.com", "tribune01");
 
