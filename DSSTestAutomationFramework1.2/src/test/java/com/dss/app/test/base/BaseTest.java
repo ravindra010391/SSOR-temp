@@ -19,7 +19,6 @@ import com.dss.app.apputilities.GlobalValues;
 import com.dss.app.coreutilities.CoreUtility;
 import com.dss.app.coreutilities.Log;
 import com.dss.app.pageobject.HomePageObject;
-import com.dss.app.test.isoflows.ISOLoginFlows;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -27,7 +26,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class BaseTest {
 
 	protected WebDriver driver;
-	protected ISOLoginFlows isoLoginFlow;
+
 	protected ExtentTest logger;
 	protected String browser = null;
 
@@ -63,7 +62,6 @@ public class BaseTest {
 		driver.get(url);
 		CoreUtility.handleAlert(driver, "accept");
 
-		isoLoginFlow = new ISOLoginFlows(driver);
 		AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
 	}
 

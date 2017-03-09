@@ -101,7 +101,7 @@ public class CoreUtility {
 	// This method will highlight the webelement
 	public static void highlightElement(WebElement element, WebDriver driver) {
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript(
 				"arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",
 				element);
@@ -112,7 +112,7 @@ public class CoreUtility {
 		js.executeScript(
 				"arguments[0].setAttribute('style','border: solid 2px white');",
 				element);
-
+*/
 	}
 
 	// This method will create a physical XML file

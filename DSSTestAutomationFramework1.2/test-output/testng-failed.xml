@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [STAGE]">
-  <parameter name="browser" value="Firefox"/>
-  <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
-  <parameter name="platform" value="WINDOWS"/>
-  <groups>
-    <run>
-      <include name="Regression"/>
-    </run>
-  </groups>
-  <test name="LA-STAGE: Test execution on Chrome">
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
-    <parameter name="platform" value="WINDOWS"/>
-    <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Chrome -->
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [STAGE]" parallel="tests">
+  <parameter name="browser" value="Chrome"/>
+  <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
   <test name="LA-STAGE: Test execution on Firefox">
     <parameter name="browser" value="Firefox"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
-    <parameter name="platform" value="WINDOWS"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
     <classes>
       <class name="com.dss.app.test.isologin.TestExecutor"/>
     </classes>
   </test> <!-- LA-STAGE: Test execution on Firefox -->
+  <test name="LA-STAGE: Test execution on Chrome">
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
+    <classes>
+      <class name="com.dss.app.test.isologin.TestExecutor"/>
+    </classes>
+  </test> <!-- LA-STAGE: Test execution on Chrome -->
+  <test name="LA-STAGE: Test execution on Firefox(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
+    <classes>
+      <class name="com.dss.app.test.isologin.TestExecutor">
+        <methods>
+          <include name="methodSetUp"/>
+          <include name="methodSetUp"/>
+          <include name="isISOLoginSuccessfull"/>
+          <include name="end1"/>
+          <include name="end1"/>
+        </methods>
+      </class> <!-- com.dss.app.test.isologin.TestExecutor -->
+    </classes>
+  </test> <!-- LA-STAGE: Test execution on Firefox(failed) -->
 </suite> <!-- Failed suite [STAGE] -->
