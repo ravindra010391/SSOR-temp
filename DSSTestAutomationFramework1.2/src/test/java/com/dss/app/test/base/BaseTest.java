@@ -1,6 +1,7 @@
 package com.dss.app.test.base;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ import com.dss.app.apputilities.GlobalValues;
 import com.dss.app.coreutilities.CoreUtility;
 import com.dss.app.coreutilities.Log;
 import com.dss.app.pageobject.HomePageObject;
+import com.dss.app.pageobject.ProfilePageObject;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -28,7 +30,8 @@ public class BaseTest {
 	protected WebDriver driver;
 
 	protected ExtentTest logger;
-	protected String browser = null;
+	protected HomePageObject homepage;
+	protected ProfilePageObject profilepage;
 
 	protected ExtentReports report = new ExtentReports(GlobalValues.reportFilePath , true);
 
@@ -54,15 +57,17 @@ public class BaseTest {
 
 	@Parameters({ "browser", "platform", "url" })
 	@BeforeMethod(alwaysRun = true)
-	public void methodSetUp(String browser, String platform, String url) {
+	public void methodSetUp(String browser, String platform, String url) throws MalformedURLException {
 
-		driver = new Config().selectBrowser(browser, platform);
+		//driver = new Config().selectBrowserOnLocal(browser, platform);
+		driver = new Config().selectBrowserOnSauceLab(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(url);
 		CoreUtility.handleAlert(driver, "accept");
-
-		AppUtility.closeAds(HomePageObject.btn_AdClose, driver);
+		
+		homepage = new HomePageObject(driver);
+		AppUtility.closeAds(homepage.btn_AdClose, driver);
 	}
 
 	@AfterMethod(alwaysRun = true)

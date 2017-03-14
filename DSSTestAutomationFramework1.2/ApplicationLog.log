@@ -677,3 +677,25 @@
 2017-03-09 12:41:51 INFO  FILE_LOGGER:44 - Redirecting to Profile page
 2017-03-09 12:41:52 INFO  FILE_LOGGER:44 - Getting 'Preferred Email' on Profile Page
 2017-03-09 12:41:53 INFO  FILE_LOGGER:44 - Preferred Email matched with the User's Email 
+2017-03-14 11:47:02 WARN  FILE_LOGGER:50 - Advertisement is not displayed
+2017-03-14 11:47:03 INFO  FILE_LOGGER:44 - Clicked on Login Button of Top NAV
+2017-03-14 11:47:06 INFO  FILE_LOGGER:44 - Entered Email id
+2017-03-14 11:47:10 INFO  FILE_LOGGER:44 - Entered Password
+2017-03-14 11:47:12 INFO  FILE_LOGGER:44 - Clicked on Login button at the login panel
+2017-03-14 11:47:12 WARN  FILE_LOGGER:50 - Advertisement is not displayed
+2017-03-14 11:47:14 INFO  FILE_LOGGER:44 - Clicked on Login Button of Top NAV
+2017-03-14 11:47:17 INFO  FILE_LOGGER:44 - Entered Email id
+2017-03-14 11:47:18 INFO  FILE_LOGGER:44 - Clicked on User Account menu
+2017-03-14 11:47:21 INFO  FILE_LOGGER:44 - Clicked on Profile link of account menu drop-down
+2017-03-14 11:47:21 INFO  FILE_LOGGER:44 - Redirecting to Profile page
+2017-03-14 11:47:21 INFO  FILE_LOGGER:44 - Entered Password
+2017-03-14 11:47:23 INFO  FILE_LOGGER:44 - Clicked on Login button at the login panel
+2017-03-14 11:47:23 INFO  FILE_LOGGER:44 - Getting 'Preferred Email' on Profile Page
+2017-03-14 11:47:24 INFO  FILE_LOGGER:44 - Preferred Email matched with the User's Email 
+2017-03-14 11:47:24 INFO  FILE_LOGGER:37 - --------------------------------- -E---N---D-------------------------------------
+2017-03-14 11:47:29 INFO  FILE_LOGGER:44 - Clicked on User Account menu
+2017-03-14 11:47:34 INFO  FILE_LOGGER:44 - Clicked on Profile link of account menu drop-down
+2017-03-14 11:47:34 INFO  FILE_LOGGER:44 - Redirecting to Profile page
+2017-03-14 11:47:35 INFO  FILE_LOGGER:44 - Getting 'Preferred Email' on Profile Page
+2017-03-14 11:47:35 INFO  FILE_LOGGER:44 - Preferred Email matched with the User's Email 
+2017-03-14 11:47:35 INFO  FILE_LOGGER:37 - --------------------------------- -E---N---D-------------------------------------
