@@ -6,11 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -183,4 +181,30 @@ public class CoreUtility {
         	threadlogFile.delete();
        */
     }
+	
+public static String getMarketName(String marketURL) {
+		
+		String[] URL = marketURL.split("\\.");
+		
+		return URL[1];
+		
+	}
+
+public static String capsFirstLetter(String string) {
+	
+	String firstLetterCaps = string.substring(0, 1).toUpperCase() + string.substring(1);
+	
+	return firstLetterCaps;
+	
+}
+
+
+public static void cleanAllTempLogFile() throws IOException {
+	
+	FileUtils.cleanDirectory(new File(GlobalValues.tempLogFilePath));
+	
+	
+	
+}
+
 }

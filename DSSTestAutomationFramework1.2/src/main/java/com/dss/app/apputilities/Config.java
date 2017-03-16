@@ -1,5 +1,6 @@
 package com.dss.app.apputilities;
 
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -73,31 +74,33 @@ public class Config {
 	}
 
 	
-		public WebDriver selectBrowserOnSauceLab(String browser, String platform) throws MalformedURLException{
-			if(platform.equalsIgnoreCase("Windows"))		
-				platform = "windows 7";
-			
-			if(browser.equalsIgnoreCase("chrome")){
-				System.out.println("chrome init");
-				DesiredCapabilities caps = DesiredCapabilities.chrome(); 
-				caps.setCapability("platform", platform);		
-				caps.setCapability("version", "latest"); 
-				//caps.setVersion("latest");
-				driver= new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
-				System.out.println("After Driver initialization chrome");
-			}
-			else if(browser.equalsIgnoreCase("firefox")){
-				System.out.println("Firefox init");
-				DesiredCapabilities caps = DesiredCapabilities.firefox(); 
-				caps.setCapability("platform", platform);		
-				caps.setCapability("version", "latest"); 
-				//caps.setVersion("latest");
-				driver=new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
-				System.out.println("After Driver initialization ff");
-			}
-			return driver;
-			
+	public WebDriver selectBrowserOnSauceLab(String browser, String platform, Method method) throws MalformedURLException{
+		if(platform.equalsIgnoreCase("Windows"))		
+			platform = "windows 7";
+		
+		if(browser.equalsIgnoreCase("chrome")){
+			System.out.println("chrome init");
+			DesiredCapabilities caps = DesiredCapabilities.chrome(); 
+			caps.setCapability("platform", platform);		
+			caps.setCapability("version", "latest");
+			caps.setCapability("name", platform + " "+browser+ " : "+method.getName());
+			driver= new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
+			System.out.println("After Driver initialization chrome");
 		}
+		else if(browser.equalsIgnoreCase("firefox")){
+			System.out.println("Firefox init");
+			DesiredCapabilities caps = DesiredCapabilities.firefox(); 
+			caps.setCapability("platform", platform);		
+			caps.setCapability("version", "latest");
+			caps.setCapability("name", platform+ " "+browser+ " : "+method.getName());
+			driver=new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
+			System.out.println("After Driver initialization ff");
+		}
+		return driver;
+		
+	}
+
+
 	
 	
 }
