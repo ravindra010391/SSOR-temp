@@ -11,7 +11,7 @@ import com.dss.app.test.base.BaseTest;
 public class TestExecutor  extends BaseTest {
 	
 
-	@Test()
+	@Test(groups = {"Regression"})
 	public void isISOLoginSuccessfull() throws InterruptedException, IOException {
 	
 		
