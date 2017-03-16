@@ -1,10 +1,13 @@
 package com.dss.app.test.base;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -32,6 +35,7 @@ public class BaseTest {
 	protected ExtentTest logger;
 	protected HomePageObject homepage;
 	protected ProfilePageObject profilepage;
+	protected Log Log;
 
 	protected ExtentReports report = new ExtentReports(GlobalValues.reportFilePath , true);
 
@@ -44,42 +48,66 @@ public class BaseTest {
 	public void suiteTearDown() {
 		report.close();
 	}
-
+	
+	@Parameters({ "browser"})
 	@BeforeTest
-	public void testSetUp() {
+	public void testSetUp(String browser) throws IOException {
 
+		String logName = browser+Thread.currentThread().getId()+"log";
+		Log = new Log(logName);
 	}
-
+	
+	
 	@AfterTest
-	public void testTearDown() {
+	public void testTearDown() throws IOException {
+		String fromFile = Log.Log.getName()+".log";
+		System.out.println("From fiel: "+fromFile);
+		
+		CoreUtility.copyDataFromTempLogFileToMainLogFile(fromFile);
 		report.flush();
 	}
 
 	@Parameters({ "browser", "platform", "url" })
 	@BeforeMethod(alwaysRun = true)
-	public void methodSetUp(String browser, String platform, String url) throws MalformedURLException {
+	public void methodSetUp(String browser, String platform, String url, Method method, ITestContext testContext) throws IOException {
 
+	
 		//driver = new Config().selectBrowserOnLocal(browser, platform);
-		driver = new Config().selectBrowserOnSauceLab(browser, platform);
+		driver = new Config(Log).selectBrowserOnSauceLab(browser, platform);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(url);
 		CoreUtility.handleAlert(driver, "accept");
 		
-		homepage = new HomePageObject(driver);
+		homepage = new HomePageObject(driver,Log);
 		AppUtility.closeAds(homepage.btn_AdClose, driver);
+		
+		Log.startTestCase(method.getName());
+		Log.info("Test: "+testContext.getName());
+		Log.info("Browser: "+browser);
+		Log.info("PLatform: "+platform);
+		Log.info("URL: "+url);
+		
 	}
 
 	@AfterMethod(alwaysRun = true)
 	public void methodTearDown(ITestResult result) throws IOException {
+	
+		System.out.println("After method");
+		
 		if (result.getStatus() == ITestResult.FAILURE) {
-			logger.log(LogStatus.FAIL, result.getThrowable());
-			String screenshotPath = CoreUtility.captureScreen(driver,
-					"screenshotName");
-			logger.log(LogStatus.FAIL, logger.addScreenCapture(screenshotPath));
+			System.out.println("Failed");
+
+			Log.error(result.getThrowable());
+		}
+		if (result.getStatus() == ITestResult.SKIP) {
+			System.out.println("skipped");
+			
+			Log.error(result.getThrowable());
 		}
 
 		report.endTest(logger);
+		
 		Log.endTestCase();
 		report.flush();
 		driver.quit();

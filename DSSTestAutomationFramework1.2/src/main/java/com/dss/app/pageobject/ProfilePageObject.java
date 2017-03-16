@@ -1,5 +1,8 @@
 package com.dss.app.pageobject;
 
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,11 +19,13 @@ public class ProfilePageObject{
 	
 
 	private WebDriver driver;
+	private Log Log;
 
-	public ProfilePageObject(WebDriver driver) {
+	public ProfilePageObject(WebDriver driver, Log Log) throws IOException {
 		this.driver = driver;
+		this.Log = Log;
 		PageFactory.initElements(driver, this);
-		Log.logInit();
+		//Log.logInit();
 	}
 
 	@FindBy(xpath = "//*[@id='content']/div/div[2]/div/div/div[1]/div[2]")

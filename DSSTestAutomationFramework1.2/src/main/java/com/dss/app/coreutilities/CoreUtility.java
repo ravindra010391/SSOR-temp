@@ -1,11 +1,17 @@
 package com.dss.app.coreutilities;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +19,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.xml.XmlSuite;
+
+import com.dss.app.apputilities.GlobalValues;
 
 /*
   * This class contains all the core methods 
@@ -116,7 +124,7 @@ public class CoreUtility {
 	}
 
 	// This method will create a physical XML file
-	public static void createPhysicalXMLFileOfSuite(XmlSuite suite,
+	public static synchronized void createPhysicalXMLFileOfSuite(XmlSuite suite,
 			String suiteName) throws IOException {
 
 		File file = new File(suiteName);
@@ -126,4 +134,53 @@ public class CoreUtility {
 		writer.close();
 	}
 
+	
+	public static synchronized void copyDataFromTempLogFileToMainLogFile(String fromFile) throws IOException{      
+        ArrayList<String> list = new ArrayList<String>();
+        BufferedReader br = null;
+        BufferedReader r = null;
+        try{
+            br = new BufferedReader(new FileReader(GlobalValues.tempLogFilePath+"\\"+fromFile));
+            
+            String s1 =null;
+            
+
+            while ((s1 = br.readLine()) != null){                         
+                list.add(s1);        
+            }
+            }
+        catch (IOException e){
+            e.printStackTrace();
+     
+        }finally{
+            br.close();
+    
+        }
+
+
+        BufferedWriter writer=null;
+        writer = new BufferedWriter(new FileWriter(GlobalValues.baseDirectory+"\\ApplicationLog.log", true));
+       
+        String listWord;              
+        for (int i = 0; i< list.size(); i++){
+            listWord = list.get(i);
+            writer.write(listWord);
+            writer.write("\n");
+        }
+
+        writer.close();  
+        
+        
+       /* 
+        try{
+        Path path = Paths.get(GlobalValues.tempLogFilePath+"\\"+fromFile);
+        Files.delete(path);
+        }catch (Exception e) {
+			e.printStackTrace();
+		}
+        File threadlogFile = new File(GlobalValues.logFilePath+"\\"+fromFile);
+        if(threadlogFile.exists())
+        	threadlogFile.delete();
+       */
+    }
 }

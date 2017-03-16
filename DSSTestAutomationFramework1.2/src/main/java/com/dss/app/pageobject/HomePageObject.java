@@ -1,5 +1,7 @@
 package com.dss.app.pageobject;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,12 +18,14 @@ public class HomePageObject {
 	
 	
 	private WebDriver driver;
+	private Log Log;
 	private ProfilePageObject profilepage;
 
-	public HomePageObject(WebDriver driver) {
+	public HomePageObject(WebDriver driver, Log Log) throws IOException {
 		this.driver = driver;
+		this.Log = Log;
 		PageFactory.initElements(driver, this);
-		Log.logInit();
+		//Log.logInit();
 	}
 	
 	
@@ -77,7 +81,7 @@ public class HomePageObject {
 
 	}
 
-	public ProfilePageObject gotoProfilePage() {
+	public ProfilePageObject gotoProfilePage() throws IOException {
 
 		profilepage = clickOnUserIcon().clickOnAccountLink();
 		Log.info("Redirecting to Profile page");
@@ -126,13 +130,13 @@ public class HomePageObject {
 		return this;
 	}
 
-	private ProfilePageObject clickOnAccountLink() {
+	private ProfilePageObject clickOnAccountLink() throws IOException {
 		CoreUtility.waitForElementPresent(link_ProfilePage,
 				driver);
 		CoreUtility.highlightElement(link_ProfilePage, driver);
 		CoreUtility.clickOnElement(link_ProfilePage);
 		Log.info("Clicked on Profile link of account menu drop-down");
-		return new ProfilePageObject(driver);
+		return new ProfilePageObject(driver,Log);
 	}
 
 }

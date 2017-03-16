@@ -3,6 +3,7 @@ package com.dss.app.apputilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +15,11 @@ import com.dss.app.coreutilities.Log;
 public class Config {
 
 	private WebDriver driver;
+	private Log Log;
+	
+	public Config(Log Log){
+		this.Log = Log;
+	}
 
 	//This method will select the browser based on the parameter passed and returns the driver of the browser
 	public WebDriver selectBrowserOnLocal(String browser, String platform) {
@@ -75,7 +81,8 @@ public class Config {
 				System.out.println("chrome init");
 				DesiredCapabilities caps = DesiredCapabilities.chrome(); 
 				caps.setCapability("platform", platform);		
-				caps.setCapability("version", "51"); 
+				caps.setCapability("version", "latest"); 
+				//caps.setVersion("latest");
 				driver= new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
 				System.out.println("After Driver initialization chrome");
 			}
@@ -83,7 +90,8 @@ public class Config {
 				System.out.println("Firefox init");
 				DesiredCapabilities caps = DesiredCapabilities.firefox(); 
 				caps.setCapability("platform", platform);		
-				caps.setCapability("version", "51"); 
+				caps.setCapability("version", "latest"); 
+				//caps.setVersion("latest");
 				driver=new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
 				System.out.println("After Driver initialization ff");
 			}

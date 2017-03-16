@@ -26,11 +26,11 @@ public class AppUtility {
 			CoreUtility.waitForElementPresent(element, driver);
 			if (element != null) {
 				CoreUtility.clickOnElement(element);
-				Log.info("Advertisement is present and closed");
+			//	Log.info("Advertisement is present and closed");
 			}
 		}
 		catch (Exception e) {
-			Log.warn("Advertisement is not displayed");
+		//	Log.warn("Advertisement is not displayed");
 		}
 	}
 

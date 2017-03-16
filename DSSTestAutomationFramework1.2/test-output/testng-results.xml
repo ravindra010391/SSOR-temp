@@ -2,20 +2,27 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="STAGE" duration-ms="89143" started-at="2017-03-14T06:16:07Z" finished-at="2017-03-14T06:17:36Z">
+  <suite name="STAGE" duration-ms="87046" started-at="2017-03-16T12:13:37Z" finished-at="2017-03-16T12:15:04Z">
     <groups>
     </groups>
-    <test name="LA-STAGE: Test execution on Firefox" duration-ms="77999" started-at="2017-03-14T06:16:07Z" finished-at="2017-03-14T06:17:25Z">
+    <test name="LA-STAGE: Test execution on Firefox" duration-ms="80530" started-at="2017-03-16T12:13:37Z" finished-at="2017-03-16T12:14:57Z">
       <class name="com.dss.app.test.isologin.TestExecutor">
-        <test-method status="PASS" signature="testSetUp()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@32464a14]" name="testSetUp" is-config="true" duration-ms="0" started-at="2017-03-14T11:46:07Z" finished-at="2017-03-14T11:46:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSetUp -->
-        <test-method status="PASS" signature="methodSetUp(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@32464a14]" name="methodSetUp" is-config="true" duration-ms="54720" started-at="2017-03-14T11:46:07Z" finished-at="2017-03-14T11:47:02Z">
+        <test-method status="PASS" signature="testSetUp(java.lang.String)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@44a3ec6b]" name="testSetUp" is-config="true" duration-ms="47" started-at="2017-03-16T17:43:37Z" finished-at="2017-03-16T17:43:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Firefox]]>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetUp -->
+        <test-method status="PASS" signature="methodSetUp(java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@44a3ec6b]" name="methodSetUp" is-config="true" duration-ms="54860" started-at="2017-03-16T17:43:37Z" finished-at="2017-03-16T17:44:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
               </value>
             </param>
             <param index="1">
@@ -28,42 +35,59 @@
                 <![CDATA[http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com]]>
               </value>
             </param>
+            <param index="3">
+              <value>
+                <![CDATA[public void com.dss.app.test.isologin.TestExecutor.isISOLoginSuccessfull() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[org.testng.TestRunner@4450d156]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- methodSetUp -->
-        <test-method status="PASS" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@32464a14]" name="isISOLoginSuccessfull" duration-ms="22427" started-at="2017-03-14T11:47:02Z" finished-at="2017-03-14T11:47:24Z">
+        <test-method status="PASS" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@44a3ec6b]" name="isISOLoginSuccessfull" duration-ms="24772" started-at="2017-03-16T17:44:32Z" finished-at="2017-03-16T17:44:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isISOLoginSuccessfull -->
-        <test-method status="PASS" signature="methodTearDown(org.testng.ITestResult)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@32464a14]" name="methodTearDown" is-config="true" duration-ms="747" started-at="2017-03-14T11:47:24Z" finished-at="2017-03-14T11:47:25Z">
+        <test-method status="PASS" signature="methodTearDown(org.testng.ITestResult)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@44a3ec6b]" name="methodTearDown" is-config="true" duration-ms="756" started-at="2017-03-16T17:44:57Z" finished-at="2017-03-16T17:44:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@32464a14] output={null}]]]>
+                <![CDATA[[TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@44a3ec6b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- methodTearDown -->
-        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@32464a14]" name="testTearDown" is-config="true" duration-ms="69" started-at="2017-03-14T11:47:25Z" finished-at="2017-03-14T11:47:25Z">
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@44a3ec6b]" name="testTearDown" is-config="true" duration-ms="73" started-at="2017-03-16T17:44:57Z" finished-at="2017-03-16T17:44:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->
       </class> <!-- com.dss.app.test.isologin.TestExecutor -->
     </test> <!-- LA-STAGE: Test execution on Firefox -->
-    <test name="LA-STAGE: Test execution on Chrome" duration-ms="89143" started-at="2017-03-14T06:16:07Z" finished-at="2017-03-14T06:17:36Z">
+    <test name="LA-STAGE: Test execution on Chrome" duration-ms="87046" started-at="2017-03-16T12:13:37Z" finished-at="2017-03-16T12:15:04Z">
       <class name="com.dss.app.test.isologin.TestExecutor">
-        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="suiteSetUp" is-config="true" duration-ms="1" started-at="2017-03-14T11:46:07Z" finished-at="2017-03-14T11:46:07Z">
+        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="suiteSetUp" is-config="true" duration-ms="1" started-at="2017-03-16T17:43:37Z" finished-at="2017-03-16T17:43:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteSetUp -->
-        <test-method status="PASS" signature="testSetUp()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="testSetUp" is-config="true" duration-ms="0" started-at="2017-03-14T11:46:07Z" finished-at="2017-03-14T11:46:07Z">
+        <test-method status="PASS" signature="testSetUp(java.lang.String)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="testSetUp" is-config="true" duration-ms="31" started-at="2017-03-16T17:43:37Z" finished-at="2017-03-16T17:43:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetUp -->
-        <test-method status="PASS" signature="methodSetUp(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="methodSetUp" is-config="true" duration-ms="65438" started-at="2017-03-14T11:46:07Z" finished-at="2017-03-14T11:47:12Z">
+        <test-method status="PASS" signature="methodSetUp(java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="methodSetUp" is-config="true" duration-ms="63006" started-at="2017-03-16T17:43:37Z" finished-at="2017-03-16T17:44:40Z">
           <params>
             <param index="0">
               <value>
@@ -80,30 +104,40 @@
                 <![CDATA[http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com]]>
               </value>
             </param>
+            <param index="3">
+              <value>
+                <![CDATA[public void com.dss.app.test.isologin.TestExecutor.isISOLoginSuccessfull() throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[org.testng.TestRunner@4461c7e3]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- methodSetUp -->
-        <test-method status="PASS" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="isISOLoginSuccessfull" duration-ms="23155" started-at="2017-03-14T11:47:12Z" finished-at="2017-03-14T11:47:35Z">
+        <test-method status="PASS" signature="isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="isISOLoginSuccessfull" duration-ms="23505" started-at="2017-03-16T17:44:40Z" finished-at="2017-03-16T17:45:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isISOLoginSuccessfull -->
-        <test-method status="PASS" signature="methodTearDown(org.testng.ITestResult)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="methodTearDown" is-config="true" duration-ms="456" started-at="2017-03-14T11:47:35Z" finished-at="2017-03-14T11:47:36Z">
+        <test-method status="PASS" signature="methodTearDown(org.testng.ITestResult)[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="methodTearDown" is-config="true" duration-ms="408" started-at="2017-03-16T17:45:03Z" finished-at="2017-03-16T17:45:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140] output={null}]]]>
+                <![CDATA[[TestResult name=isISOLoginSuccessfull status=SUCCESS method=TestExecutor.isISOLoginSuccessfull()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- methodTearDown -->
-        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="testTearDown" is-config="true" duration-ms="47" started-at="2017-03-14T11:47:36Z" finished-at="2017-03-14T11:47:36Z">
+        <test-method status="PASS" signature="testTearDown()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="testTearDown" is-config="true" duration-ms="59" started-at="2017-03-16T17:45:04Z" finished-at="2017-03-16T17:45:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->
-        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@3ffcd140]" name="suiteTearDown" is-config="true" duration-ms="16" started-at="2017-03-14T11:47:36Z" finished-at="2017-03-14T11:47:36Z">
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.dss.app.test.isologin.TestExecutor@133e16fd]" name="suiteTearDown" is-config="true" duration-ms="49" started-at="2017-03-16T17:45:04Z" finished-at="2017-03-16T17:45:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->

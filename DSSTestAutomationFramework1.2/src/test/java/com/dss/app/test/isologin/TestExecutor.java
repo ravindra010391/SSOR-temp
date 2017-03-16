@@ -1,5 +1,7 @@
 package com.dss.app.test.isologin;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,8 +12,9 @@ public class TestExecutor  extends BaseTest {
 	
 
 	@Test()
-	public void isISOLoginSuccessfull() throws InterruptedException {
+	public void isISOLoginSuccessfull() throws InterruptedException, IOException {
 	
+		
 		System.out.println("Current thread tc"+Thread.currentThread().getId());
 		homepage.clickOnLoginTopNav();
 		System.out.println("Current thread tc after topnav"+Thread.currentThread().getId());
