@@ -1,0 +1,17 @@
+2017-03-16 17:44:32,246 [INFO|firefox11log] ----------------------------------------------------------------------------------------
+2017-03-16 17:44:32,247 [INFO|firefox11log] ------------------------------ isISOLoginSuccessfull -------------------------------------
+2017-03-16 17:44:32,247 [INFO|firefox11log] ----------------------------------------------------------------------------------------
+2017-03-16 17:44:32,247 [INFO|firefox11log] Test: LA-STAGE: Test execution on Firefox
+2017-03-16 17:44:32,247 [INFO|firefox11log] Browser: firefox
+2017-03-16 17:44:32,247 [INFO|firefox11log] PLatform: windows
+2017-03-16 17:44:32,248 [INFO|firefox11log] URL: http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com
+2017-03-16 17:44:33,557 [INFO|firefox11log] Clicked on Login Button of Top NAV
+2017-03-16 17:44:36,981 [INFO|firefox11log] Entered Email id
+2017-03-16 17:44:40,369 [INFO|firefox11log] Entered Password
+2017-03-16 17:44:42,709 [INFO|firefox11log] Clicked on Login button at the login panel
+2017-03-16 17:44:49,001 [INFO|firefox11log] Clicked on User Account menu
+2017-03-16 17:44:51,216 [INFO|firefox11log] Clicked on Profile link of account menu drop-down
+2017-03-16 17:44:51,217 [INFO|firefox11log] Redirecting to Profile page
+2017-03-16 17:44:53,605 [INFO|firefox11log] Getting 'Preferred Email' on Profile Page
+2017-03-16 17:44:57,017 [INFO|firefox11log] Preferred Email matched with the User's Email 
+2017-03-16 17:44:57,029 [INFO|firefox11log] --------------------------------- -E---N---D-------------------------------------
