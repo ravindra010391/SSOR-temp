@@ -37,7 +37,7 @@
 
        <executions>
         <execution>
-         <phase>compile</phase>
+         <phase>test-compile</phase>
          <goals>
           <goal>java</goal>
          </goals>
