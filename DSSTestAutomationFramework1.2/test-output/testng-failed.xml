@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [STAGE]" parallel="tests">
-  <parameter name="browser" value="Chrome"/>
+<suite thread-count="10" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [STAGE]" parallel="tests">
+  <parameter name="browser" value="firefox"/>
   <parameter name="platform" value="windows"/>
-  <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
-  <test name="LA-STAGE: Test execution on Firefox">
+  <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.baltimoresun.stage.tribdev.com"/>
+  <test name="bbasLA-STAGE: Test execution on Firefox(failed)" parallel="tests">
     <parameter name="browser" value="firefox"/>
     <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.baltimoresun.stage.tribdev.com"/>
     <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
+      <class name="com.dss.app.test.isologin.TestExecutor">
+        <methods>
+          <include name="suiteTearDown"/>
+          <include name="methodTearDown"/>
+          <include name="methodSetUp"/>
+          <include name="isISOLoginSuccessful"/>
+        </methods>
+      </class> <!-- com.dss.app.test.isologin.TestExecutor -->
     </classes>
-  </test> <!-- LA-STAGE: Test execution on Firefox -->
-  <test name="LA-STAGE: Test execution on Chrome">
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
-    <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Chrome -->
+  </test> <!-- bbasLA-STAGE: Test execution on Firefox(failed) -->
 </suite> <!-- Failed suite [STAGE] -->

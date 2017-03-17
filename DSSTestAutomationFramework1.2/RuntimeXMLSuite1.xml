@@ -13,47 +13,5 @@
     </classes>
   </test> <!-- LA-STAGE: Test execution on Firefox -->
   
-  <test name="aasaaLA-STAGE: Test execution on Chrome" >
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.dailypress.stage.tribdev.com"/>
-     <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Chrome -->
   
-  <test name="basbLA-STAGE: Test execution on Firefox"  >
-    <parameter name="browser" value="firefox"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
-    <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Firefox -->
-  
-  <test name="adfgdfaLA-STAGE: Test execution on Chrome" >
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.orlandosentinel.stage.tribdev.com"/>
-     <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Chrome -->
-  <test name="bLAdfg-STAGE: Test execution on Firefox"  >
-    <parameter name="browser" value="firefox"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
-    <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Firefox -->
-  
-  <test name="aLtyuiA-STAGE: Test execution on Chrome" >
-    <parameter name="browser" value="Chrome"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.sun-sentinel.stage.tribdev.com"/>
-     <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor"/>
-    </classes>
-  </test> <!-- LA-STAGE: Test execution on Chrome -->
 </suite> <!-- STAGE -->
