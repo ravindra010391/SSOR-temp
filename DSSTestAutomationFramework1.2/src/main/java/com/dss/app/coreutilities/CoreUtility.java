@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.xml.XmlSuite;
 
 import com.dss.app.apputilities.GlobalValues;
@@ -133,12 +134,12 @@ public class CoreUtility {
 	}
 
 	
-	public static synchronized void copyDataFromTempLogFileToMainLogFile(String fromFile) throws IOException{      
+	public static synchronized void copyDataFromTempLogFileToMainLogFile(String fromFile, String toFile) throws IOException{      
         ArrayList<String> list = new ArrayList<String>();
         BufferedReader br = null;
         BufferedReader r = null;
         try{
-            br = new BufferedReader(new FileReader(GlobalValues.tempLogFilePath+"\\"+fromFile));
+            br = new BufferedReader(new FileReader(GlobalValues.tempLogFilePath + File.separator + fromFile));
             
             String s1 =null;
             
@@ -152,12 +153,12 @@ public class CoreUtility {
      
         }finally{
             br.close();
-    
+                 
         }
 
 
         BufferedWriter writer=null;
-        writer = new BufferedWriter(new FileWriter(GlobalValues.baseDirectory+"\\ApplicationLog.log", true));
+        writer = new BufferedWriter(new FileWriter(GlobalValues.baseDirectory + File.separator + toFile, true));
        
         String listWord;              
         for (int i = 0; i< list.size(); i++){
@@ -167,6 +168,7 @@ public class CoreUtility {
         }
 
         writer.close();  
+ 
         
         
        /* 
@@ -203,8 +205,7 @@ public static void cleanAllTempLogFile() throws IOException {
 	
 	FileUtils.cleanDirectory(new File(GlobalValues.tempLogFilePath));
 	
-	
-	
 }
+
 
 }

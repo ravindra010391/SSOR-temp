@@ -40,12 +40,22 @@ public class AppUtility {
 		Random random = new Random();
 		int randomnum = random.nextInt(1000);
 
-		DateFormat timeFormat = new SimpleDateFormat("ddMMMMyyHHMM");
-		Date date = new Date();
-		String currentdate = timeFormat.format(date);
+		
+		String currentdate = getCurrentDate();
 
 		emailId = "ISO" + "_" + currentdate + "_" + randomnum + "@SSOR.com";
 		return emailId;
+	}
+	
+	public static String  getCurrentDate(){
+		
+		String current_Date = null;
+		DateFormat timeFormat = new SimpleDateFormat("ddMMYYYY");
+		Date date = new Date();
+		current_Date=timeFormat.format(date);
+		
+		return current_Date;
+		
 	}
 
 }

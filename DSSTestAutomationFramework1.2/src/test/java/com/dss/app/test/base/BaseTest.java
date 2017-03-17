@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ISuite;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -14,6 +15,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.dss.app.apputilities.AppUtility;
@@ -27,7 +29,7 @@ import com.dss.app.reporter.Extentmanager;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class BaseTest {
+public class BaseTest{
 
 	protected WebDriver driver;
 
@@ -36,15 +38,19 @@ public class BaseTest {
 	protected ProfilePageObject profilepage;
 	protected Log Log;
 	protected String jobID;
+	protected String currentSuiteName;
 
 
 	@BeforeSuite(alwaysRun = true)
-	public void suiteSetUp() {
+	public void suiteSetUp(ITestContext context) {
+		currentSuiteName = context.getCurrentXmlTest().getSuite().getName();
+		Extentmanager.getReporter(currentSuiteName);
 
 	}
 
 	@AfterSuite(alwaysRun = true)
 	public void suiteTearDown() throws IOException {
+		
 		CoreUtility.cleanAllTempLogFile();
 		Extentmanager.getReporter().close();
 	}
@@ -59,11 +65,13 @@ public class BaseTest {
 	
 	
 	@AfterTest
-	public void testTearDown() throws IOException {
-		String fromFile = Log.Log.getName()+".log";
-		System.out.println("From fiel: "+fromFile);
-		
-		CoreUtility.copyDataFromTempLogFileToMainLogFile(fromFile);
+	public void testTearDown(ITestContext context) throws IOException {
+        String fromFile = Log.Log.getName()+".log";
+        String toFile =  "Log"+currentSuiteName+AppUtility.getCurrentDate()+".log";
+       
+        System.out.println("From fiel: "+fromFile);
+        CoreUtility.copyDataFromTempLogFileToMainLogFile(fromFile,toFile);
+
 		
 	}
 
@@ -115,5 +123,14 @@ public class BaseTest {
 
 		
 	}
+
+
+	
+
+
+
+	
+	
+	
 
 }

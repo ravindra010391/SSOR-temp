@@ -14,6 +14,6 @@ public interface GlobalValues {
 	public static final String SAUCE_ACCESS_KEY = "bb762560-281d-4fc2-8c1a-7b4da557c498"; 
 	public static final String SAUCE_URL = "http://" + SAUCE_USERNAME + ":" + SAUCE_ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 	
-	public static final String ExtentReportPath = baseDirectory+"\\Report.html";
+	public static final String ExtentReportPath = baseDirectory;
 	public static final String ExtentReportConfig = baseDirectory+"\\src\\main\\java\\com\\dss\\app\\reporter\\ExtentConf.xml";
 }
