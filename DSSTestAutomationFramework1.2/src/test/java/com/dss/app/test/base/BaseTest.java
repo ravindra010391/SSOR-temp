@@ -51,7 +51,7 @@ public class BaseTest{
 	@AfterSuite(alwaysRun = true)
 	public void suiteTearDown() throws IOException {
 		
-		CoreUtility.cleanAllTempLogFile();
+		//CoreUtility.cleanAllTempLogFile();
 		Extentmanager.getReporter().close();
 	}
 	
