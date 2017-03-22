@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="10" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [STAGE]" parallel="tests">
-  <parameter name="browser" value="firefox"/>
-  <parameter name="platform" value="windows"/>
-  <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.baltimoresun.stage.tribdev.com"/>
-  <test name="bbasLA-STAGE: Test execution on Firefox(failed)" parallel="tests">
-    <parameter name="browser" value="firefox"/>
-    <parameter name="platform" value="windows"/>
-    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.baltimoresun.stage.tribdev.com"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
+  <parameter name="platform" value="Mac"/>
+  <test name="MC-STAGE: Test execution on Chrome">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
+    <parameter name="platform" value="Mac"/>
     <classes>
-      <class name="com.dss.app.test.isologin.TestExecutor">
-        <methods>
-          <include name="suiteTearDown"/>
-          <include name="methodTearDown"/>
-          <include name="methodSetUp"/>
-          <include name="isISOLoginSuccessful"/>
-        </methods>
-      </class> <!-- com.dss.app.test.isologin.TestExecutor -->
+      <class name="com.dss.app.test.isologin.TestExecutor"/>
     </classes>
-  </test> <!-- bbasLA-STAGE: Test execution on Firefox(failed) -->
+  </test> <!-- MC-STAGE: Test execution on Chrome -->
 </suite> <!-- Failed suite [STAGE] -->

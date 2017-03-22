@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-STAGE">
-                    <span>C:\Users\avinashkumarp\git\SSOR-temp\DSSTestAutomationFramework1.2\RuntimeXMLSuite1.xml</span>
+                    <span>C:\Users\ravindram\git\SSOR-temp\DSSTestAutomationFramework1.2\RuntimeXMLSuite1.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -135,21 +135,21 @@
         </div> <!-- panel STAGE -->
         <div panel-name="test-xml-STAGE" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\avinashkumarp\git\SSOR-temp\DSSTestAutomationFramework1.2\RuntimeXMLSuite1.xml</span>
+            <span class="header-content">C:\Users\ravindram\git\SSOR-temp\DSSTestAutomationFramework1.2\RuntimeXMLSuite1.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;10&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;2&quot; name=&quot;STAGE&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test name=&quot;bbasLA-STAGE: Test execution on Firefox&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
-    &lt;parameter name=&quot;platform&quot; value=&quot;windows&quot;/&gt;
-    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.baltimoresun.stage.tribdev.com&quot;/&gt;
+  &lt;test name=&quot;MC-STAGE: Test execution on Chrome&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com&quot;/&gt;
+    &lt;parameter name=&quot;platform&quot; value=&quot;Mac&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.dss.app.test.isologin.TestExecutor&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- bbasLA-STAGE: Test execution on Firefox --&gt;
+  &lt;/test&gt; &lt;!-- MC-STAGE: Test execution on Chrome --&gt;
 &lt;/suite&gt; &lt;!-- STAGE --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,7 +161,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">bbasLA-STAGE: Test execution on Firefox (1 class)</span>
+                <span class="test-name">MC-STAGE: Test execution on Chrome (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -191,12 +191,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'isISOLoginSuccessful')
 data.setCell(0, 2, 'com.dss.app.test.isologin.TestExecutor')
-data.setCell(0, 3, 22121);
+data.setCell(0, 3, 24818);
 window.suiteTableData['STAGE']= { tableData: data, tableDiv: 'times-div-STAGE'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-STAGE">
               </div> <!-- times-div-STAGE -->
             </div> <!-- times-div -->
@@ -224,34 +224,32 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.dss.app.test.isologin.TestExecutor</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">suiteSetUp(org.testng.TestRunner@2133814f)</span>
+                <span class="method-name">suiteSetUp(org.testng.TestRunner@641147d0)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">testSetUp(firefox)</span>
-                <span class="method-start">294 ms</span>
+                <span class="method-name">testSetUp(chrome)</span>
+                <span class="method-start">415 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">methodSetUp(firefox, windows, http://nguxbeta:nguxtr!b@ngux.baltimoresun.stage.tribdev.com, public void com.dss....)</span>
-                <span class="method-start">321 ms</span>
+                <span class="method-name">methodSetUp(chrome, Mac, http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com, public void com.dss.app.test.iso...)</span>
+                <span class="method-start">461 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">isISOLoginSuccessful</span>
-                <span class="method-start">55864 ms</span>
+                <span class="method-start">85404 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">methodTearDown([TestResult name=isISOLoginSuccessful status=SUCCESS method=TestExecutor.isISOLoginSuccessful()[pri:...)</span>
-                <span class="method-start">77987 ms</span>
+                <span class="method-start">110241 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
-                <span class="method-name">testTearDown(org.testng.TestRunner@2133814f)</span>
-                <span class="method-start">78755 ms</span>
+                <span class="method-name">testTearDown(org.testng.TestRunner@641147d0)</span>
+                <span class="method-start">114326 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">suiteTearDown</span>
-                <span class="method-start">78956 ms</span>
+                <span class="method-start">114380 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

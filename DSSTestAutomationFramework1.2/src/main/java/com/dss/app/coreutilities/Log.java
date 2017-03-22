@@ -73,8 +73,14 @@ public class Log  {
 
 	 	}
 
-	  public void endTestCase(){
-
+	  public void endTestCase(String result){
+		  if(result.equalsIgnoreCase("pass"))
+			  Log.info("--------------------------------- "+"-P-A-S-S-E-D-"+"------------------------------------");
+		  else if(result.equalsIgnoreCase("fail"))
+			  Log.error("--------------------------------- "+"-F-A-I-L-E-D-"+"------------------------------------");
+		  else if(result.equalsIgnoreCase("skip"))
+			  Log.error("--------------------------------- "+"-S-K-I-P-P-E-D-"+"------------------------------------");
+		  
 	 	Log.info("--------------------------------- "+"-E---N---D-"+"------------------------------------");
 
 	 	}

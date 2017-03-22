@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 //@Listeners(DSSReporter.class)
 public class TestExecutor  extends BaseTest {
 	
-	@Test(groups={"regression"})
+	@Test()
 	public void isISOLoginSuccessful() throws InterruptedException, IOException {
 	
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Clicking on TopNav");

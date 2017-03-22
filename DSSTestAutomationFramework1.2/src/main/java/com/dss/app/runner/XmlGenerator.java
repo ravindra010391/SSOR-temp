@@ -61,7 +61,7 @@ public class XmlGenerator {
 
 			// Creating <Suite> tag for each Jenkin parameter token
 			xmlSuite[i] = new XmlSuite();
-			//xmlSuite[i].setParallel(ParallelMode.TESTS);
+			xmlSuite[i].setParallel(ParallelMode.TESTS);
 		    xmlSuite[i].setThreadCount(10);
 			xmlSuite[i].setName(objectarray[i].enviroment);
 			xmlSuite[i].setVerbose(2);

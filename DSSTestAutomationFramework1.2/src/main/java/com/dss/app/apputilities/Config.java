@@ -4,7 +4,6 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,19 +16,21 @@ public class Config {
 
 	private WebDriver driver;
 	private Log Log;
-	
-	public Config(Log Log){
+
+	public Config(Log Log) {
 		this.Log = Log;
 	}
 
-	//This method will select the browser based on the parameter passed and returns the driver of the browser
+	// This method will select the browser based on the parameter passed and
+	// returns the driver of the browser
 	public WebDriver selectBrowserOnLocal(String browser, String platform) {
 
 		switch (browser.toLowerCase()) {
 		case "chrome":
 
 			if (platform.equalsIgnoreCase("windows")) {
-				System.setProperty("webdriver.chrome.driver",GlobalValues.windowsChromeDriverPath);
+				System.setProperty("webdriver.chrome.driver",
+						GlobalValues.windowsChromeDriverPath);
 				driver = new ChromeDriver();
 			} else if (platform.equalsIgnoreCase("mac")) {
 				Log.info("Mac Chrome browser is selected ");
@@ -41,9 +42,10 @@ public class Config {
 
 		case "firefox":
 			if (platform.equalsIgnoreCase("windows")) {
-				System.setProperty("webdriver.gecko.driver",GlobalValues.windowsFirefoxDriverPath);
+				System.setProperty("webdriver.gecko.driver",
+						GlobalValues.windowsFirefoxDriverPath);
 				driver = new FirefoxDriver();
-				//Log.info("Windows Firefox browser is selected ");
+				// Log.info("Windows Firefox browser is selected ");
 			} else if (platform.equalsIgnoreCase("mac")) {
 				Log.info("Mac Firefox browser is selected ");
 			} else
@@ -73,34 +75,86 @@ public class Config {
 		return driver;
 	}
 
-	
-	public WebDriver selectBrowserOnSauceLab(String browser, String platform, Method method) throws MalformedURLException{
-		if(platform.equalsIgnoreCase("Windows"))		
-			platform = "windows 7";
+	public synchronized WebDriver selectBrowserOnSauceLab(String browser,
+			String platform, Method method) throws MalformedURLException {
 		
-		if(browser.equalsIgnoreCase("chrome")){
-			System.out.println("chrome init");
-			DesiredCapabilities caps = DesiredCapabilities.chrome(); 
-			caps.setCapability("platform", platform);		
+		if (platform.equalsIgnoreCase("Windows")) {
+			platform = GlobalValues.SAUCE_WINDOWS_VERSION;
+		} else if (platform.equalsIgnoreCase("Mac")) {
+			platform = GlobalValues.SAUCE_MAC_VERSION;
+		
+		}
+
+		DesiredCapabilities caps = null;
+
+		switch (browser.toLowerCase()) {
+		case "chrome":
+			System.out.println("Chrome init");
+			caps = DesiredCapabilities.chrome();
 			caps.setCapability("version", "latest");
-			caps.setCapability("name", platform + " "+browser+ " : "+method.getName());
-			driver= new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
+			if (platform.contains("windows"))
+				caps.setCapability("platform", platform);
+			else if (platform.contains("OS")) 
+				caps.setCapability("platform", platform);
+			caps.setCapability("name",
+					platform + " " + browser + " : " + method.getName());	
+			driver = new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
 			System.out.println("After Driver initialization chrome");
-		}
-		else if(browser.equalsIgnoreCase("firefox")){
+			break;
+
+		case "firefox":
 			System.out.println("Firefox init");
-			DesiredCapabilities caps = DesiredCapabilities.firefox(); 
-			caps.setCapability("platform", platform);		
+			caps = DesiredCapabilities.firefox();
 			caps.setCapability("version", "latest");
-			caps.setCapability("name", platform+ " "+browser+ " : "+method.getName());
-			driver=new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
+
+			if (platform.contains("windows"))
+				caps.setCapability("platform", platform);
+			else if (platform.contains("OS")) 
+				caps.setCapability("platform", platform);
+			caps.setCapability("name",
+					platform + " " + browser + " : " + method.getName());
+			driver = new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
 			System.out.println("After Driver initialization ff");
+			break;
+			
+		case "internetexplorer":
+			System.out.println("IE init");
+			caps = DesiredCapabilities.internetExplorer();
+			caps.setCapability("version", "latest");
+
+			if (platform.contains("windows"))
+				caps.setCapability("platform", platform);
+			else 
+				System.out.println("Invalid platform for IE browser");
+			
+			caps.setCapability("name",
+					platform + " " + browser + " : " + method.getName());
+			driver = new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
+			System.out.println("After Driver initialization IE");
+			break;
+			
+		case "safari":
+			System.out.println("Init safari");
+			caps = DesiredCapabilities.safari();
+			caps.setCapability("version", "latest");
+
+			if (platform.contains("OS "))
+				caps.setCapability("platform", platform);
+			else 
+				System.out.println("Invalid platform for SAFARI browser");
+			
+			caps.setCapability("name",
+					platform + " " + browser + " : " + method.getName());
+			driver = new RemoteWebDriver(new URL(GlobalValues.SAUCE_URL), caps);
+			System.out.println("After Driver initialization safari");
+			break;
+
+		default:
+			System.out.println("Invalid browser or platform");
+
 		}
+
 		return driver;
-		
 	}
 
-
-	
-	
 }
