@@ -10,8 +10,8 @@ public interface GlobalValues {
 	public static final String windowsFirefoxDriverPath = baseDirectory+ "\\src\\test\\resources\\geckodriver.exe";
 	
 	//Sauce Lab config details
-	public static final String SAUCE_USERNAME = "ravindra.mandage"; 
-	public static final String SAUCE_ACCESS_KEY = "55c4cdc1-1a32-4aba-9f77-c066bf134df0"; 
+	public static final String SAUCE_USERNAME = "ravindra.mandage1"; 
+	public static final String SAUCE_ACCESS_KEY = "57949a79-890c-456e-86e8-cc867d6a25d8"; 
 	public static final String SAUCE_URL = "http://" + SAUCE_USERNAME + ":" + SAUCE_ACCESS_KEY + "@ondemand.saucelabs.com:80/wd/hub";
 	public static final String SAUCE_MAC_VERSION = "macOS 10.12";
 	public static final String SAUCE_WINDOWS_VERSION = "windows 7";

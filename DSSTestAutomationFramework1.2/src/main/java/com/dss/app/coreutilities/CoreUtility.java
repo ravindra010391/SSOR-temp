@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
@@ -81,14 +82,14 @@ public class CoreUtility {
 			Alert alert = driver.switchTo().alert();
 			if (action.equalsIgnoreCase("accept")) {
 				alert.accept();
-				//log.debug("Alert is accepted");
+				System.out.println("accepted");
 			} else {
 				alert.dismiss();
-				//log.debug("Alert is dismmissed");
+			System.out.println("dismissed");
 			}
 
 		} catch (Exception e) {
-			//log.warn("Alert is not present ");
+			System.out.println("catched alert");
 		}
 	}
 
@@ -207,5 +208,31 @@ public static void cleanAllTempLogFile() throws IOException {
 	
 }
 
+public static String switchToWindow(WebDriver driver, String token_url){
+
+	int attempts = 0;
+	String parentWindowHandle = driver.getWindowHandle();
+	try{	
+	Set<String> allWindowHandles = driver.getWindowHandles();
+	
+	for(String eachWindow : allWindowHandles){
+		driver.switchTo().window(eachWindow);
+		if(driver.getCurrentUrl().contains(token_url)){
+			break;
+		}
+	}
+	}catch(Exception e){
+		//Will handle exception in case Social media window gets closed late/while getting URL 
+		if(attempts <2){
+		switchToWindow( driver, token_url);
+		attempts++;
+		}
+	}
+	return parentWindowHandle;
+}
+
+public static void switchToParentWindow(WebDriver driver){
+	driver.switchTo().defaultContent();
+}
 
 }

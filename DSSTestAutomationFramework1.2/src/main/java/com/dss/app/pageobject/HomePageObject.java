@@ -15,22 +15,19 @@ import com.dss.app.coreutilities.Log;
  */
 public class HomePageObject {
 
-	
-	
 	private WebDriver driver;
 	private Log Log;
 	private ProfilePageObject profilepage;
 
-	public HomePageObject(WebDriver driver, Log Log) throws IOException {
+	public HomePageObject(WebDriver driver, Log Log) {
 		this.driver = driver;
 		this.Log = Log;
 		PageFactory.initElements(driver, this);
-		//Log.logInit();
 	}
 	
 	
 	@FindBy(xpath = "html/body/header/div[1]/div[1]/a[2]")
-	private  WebElement btn_LoginTopNav;
+	public  WebElement btn_LoginTopNav;
 
 	@FindBy(xpath = "html/body/header/div[1]/div[1]/a[3]")
 	private  WebElement btn_Subscribe;
@@ -64,7 +61,36 @@ public class HomePageObject {
 	@FindBy(xpath = "html/body/header/div[1]/div[1]/ul/li[3]/a")
 	private  WebElement link_SignOut;
 	
+	//Social media icons for SSO login
+	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[2]/div/div[1]")
+	private WebElement icon_Facebook;
 	
+	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[2]/div/div[2]")
+	private WebElement icon_Twitter;
+	
+	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[2]/div/div[3]")
+	private WebElement icon_Yahoo;
+	
+	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[2]/div/div[4]")
+	private WebElement icon_Aol;
+	
+	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[2]/div/div[5]")
+	private WebElement icon_Gmail;
+	
+	// Intercept panel
+	@FindBy(name = "zipCode")
+	private WebElement textbox_Zipcode_InterceptPanel;
+	
+	@FindBy(xpath = "//*[@id='reg-overlay']/div/div[2]/form/div[1]/button" )
+	private WebElement btn_Continue_InterceptPanel;
+	
+	@FindBy(name = "email")
+	private WebElement textbox_Email_InterceptPanel;
+		
+	
+	//Thank You Panel
+	@FindBy(xpath = "//*[@id='reg-overlay']/div[2]/div[2]/div[2]/div")
+	private WebElement btn_Continue_ThankYouPanel;	
 
 
 	public HomePageObject clickOnLoginTopNav() {
@@ -88,7 +114,75 @@ public class HomePageObject {
 		return profilepage;
 	}
 	
+	public GigyaPageObject clickOnFacebookIcon(){
+		CoreUtility.highlightElement(icon_Facebook, driver);
+		CoreUtility.waitForElementPresent(icon_Facebook, driver);
+		CoreUtility.clickOnElement(icon_Facebook);
+		Log.info("Clicked on Social Media Icon: Facebook");
+		return new GigyaPageObject(driver, Log);
+	}
 	
+	public GigyaPageObject clickOnGmailIcon(){
+		CoreUtility.highlightElement(icon_Gmail, driver);
+		CoreUtility.waitForElementPresent(icon_Gmail, driver);
+		CoreUtility.clickOnElement(icon_Gmail);
+		Log.info("Clicked on Social Media Icon: Gmail");
+		return new GigyaPageObject(driver, Log);
+	}
+	
+	
+	public void enterZipcodeOnInterceptPanel(String zipcode){
+		CoreUtility.waitForElementPresent(textbox_Zipcode_InterceptPanel, driver);
+		CoreUtility.highlightElement(textbox_Zipcode_InterceptPanel, driver);
+		CoreUtility.enterData(zipcode, textbox_Zipcode_InterceptPanel);
+		Log.info("Entered the zipcode");
+	}
+	
+	public void clickOnContinueButtonOnInterceptPanel(){
+		CoreUtility.waitForElementPresent(btn_Continue_InterceptPanel, driver);
+		CoreUtility.highlightElement(btn_Continue_InterceptPanel, driver);
+		CoreUtility.clickOnElement(btn_Continue_InterceptPanel);
+		Log.info("Clicked on continue Button");
+	}
+	
+	public void clickOnContinueButtonOnThankYouPanel(){
+		CoreUtility.highlightElement(btn_Continue_ThankYouPanel, driver);
+		CoreUtility.waitForElementPresent(btn_Continue_ThankYouPanel, driver);
+		CoreUtility.clickOnElement(btn_Continue_ThankYouPanel);
+		Log.info("Clicked On Continue Button On Thank You Panel");
+	}
+	
+	public GigyaPageObject clickOnAOLIcon(){
+		CoreUtility.waitForElementPresent(icon_Aol, driver);
+		CoreUtility.highlightElement(icon_Aol, driver);
+		CoreUtility.clickOnElement(icon_Aol);
+		Log.info("Clicked on AOL Icon from Login Panel");
+		return new GigyaPageObject(driver, Log);
+	}
+
+	public GigyaPageObject clickOnTwitterIcon() throws InterruptedException{
+		CoreUtility.waitForElementPresent(icon_Twitter, driver);
+		CoreUtility.highlightElement(icon_Twitter, driver);
+		CoreUtility.clickOnElement(icon_Twitter);
+		Log.info("Clicked on Twitter Icon from Login Panel");
+		Thread.sleep(5000);
+		return new GigyaPageObject(driver, Log);
+	}
+	public void enterEmailOnInterceptPanel(String email){
+		CoreUtility.waitForElementPresent(textbox_Email_InterceptPanel, driver);
+		CoreUtility.highlightElement(textbox_Email_InterceptPanel, driver);
+		CoreUtility.enterData(email, textbox_Email_InterceptPanel);
+		Log.info("Email is Entered on Intercept Panel");
+	}
+	
+	public GigyaPageObject clickOnYahooIcon(){
+		CoreUtility.waitForElementPresent(icon_Yahoo, driver);
+		CoreUtility.highlightElement(icon_Yahoo, driver);
+		CoreUtility.clickOnElement(icon_Yahoo);
+		Log.info("Clicked on Yahoo Icon from Login Panel");
+		return new GigyaPageObject(driver, Log);
+	}
+
 
 	// ****************PRIVATE METHODS*******************************
 	private HomePageObject enterEmailId(String emailId) {
@@ -139,4 +233,5 @@ public class HomePageObject {
 		return new ProfilePageObject(driver,Log);
 	}
 
+	
 }

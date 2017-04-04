@@ -57,5 +57,35 @@ public class AppUtility {
 		return current_Date;
 		
 	}
+	
+	
+	public static void deleteGmailCookies(WebDriver driver){
+		driver.get("http://www.google.com");
+		deleteAllCookies(driver);
+	}
+	public static void deleteFacebookCookies(WebDriver driver){
+		driver.get("http://www.facebook.com");
+		deleteAllCookies(driver);
+	}
+	
+	public static void deleteYahooCookies(WebDriver driver){
+		driver.get("http://www.yahoo.com");
+		deleteAllCookies(driver);
+	}
+	
+	public static void deleteTwitterCookies(WebDriver driver){
+		driver.get("http://www.teitter.com");
+		deleteAllCookies(driver);
+	}
+	
+	public static void deleteAOLCookies(WebDriver driver){
+		driver.get("http://www.aol.com");
+		deleteAllCookies(driver);
+	}
+	
+	
+	public static void deleteAllCookies(WebDriver driver){
+		driver.manage().deleteAllCookies();
+	}
 
 }

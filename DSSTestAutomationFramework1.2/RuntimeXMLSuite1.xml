@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" verbose="2" name="STAGE" parallel="tests">
+
+  <test name="MC-STAGE: Test execution on Internet Explorer">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <classes>
+      <class name="com.dss.app.test.isologin.TestExecutor"/>
+    </classes>
+  </test> <!-- MC-STAGE: Test execution on Chrome -->
+ 
+</suite> <!-- STAGE -->

@@ -1,6 +1,7 @@
 package com.dss.app.test.base;
 
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +26,7 @@ import com.dss.app.apputilities.Config;
 import com.dss.app.apputilities.SauceREST;
 import com.dss.app.coreutilities.CoreUtility;
 import com.dss.app.coreutilities.Log;
+import com.dss.app.pageobject.GigyaPageObject;
 import com.dss.app.pageobject.HomePageObject;
 import com.dss.app.pageobject.ProfilePageObject;
 import com.dss.app.reporter.ExtentTestManager;
@@ -37,12 +39,16 @@ public class BaseTest{
 	protected WebDriver driver;
 
 	protected ExtentTest logger;
+	protected Log Log;
 	protected HomePageObject homepage;
 	protected ProfilePageObject profilepage;
-	protected Log Log;
+	protected GigyaPageObject gigyapage;
+	
 	protected SauceREST SauceREST;
 	protected String jobID;
+	protected String url;
 	public static String currentSuiteName;
+	
 
 
 	@BeforeSuite(alwaysRun = true)
@@ -86,7 +92,7 @@ public class BaseTest{
 	@BeforeMethod(alwaysRun = true)
 	public void methodSetUp(String browser, String platform, String url, Method method, ITestContext testContext) throws IOException, InterruptedException {
 
-	
+		this.url = url;
 		//driver = new Config().selectBrowserOnLocal(browser, platform);
 		driver = new Config(Log).selectBrowserOnSauceLab(browser, platform, method);
 		jobID =  (((RemoteWebDriver) driver).getSessionId()).toString();
@@ -96,10 +102,10 @@ public class BaseTest{
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(url);
+		getURL(url);
 		CoreUtility.handleAlert(driver, "accept");
 		
-		homepage = new HomePageObject(driver,Log);
+		homepage = getHomePageObject();
 		AppUtility.closeAds(homepage.btn_AdClose, driver);
 		
 		Log.startTestCase(method.getName());
@@ -113,19 +119,20 @@ public class BaseTest{
 	@AfterMethod(alwaysRun = true)
 	public void methodTearDown(ITestResult result) throws IOException {
 		
-		String testStatus = "pass";
+		String testStatus = "null";
 		if (result.getStatus() == ITestResult.FAILURE) {
-			testStatus = "fail";
+			testStatus = "Failed";
             ExtentTestManager.getTest().log(LogStatus.FAIL, result.getThrowable());
             SauceREST.jobFailed(jobID);
             Log.error(result.getThrowable());
             
         } else if (result.getStatus() == ITestResult.SKIP) {
-        	testStatus = "skip";
+        	testStatus = "Skipped";
             ExtentTestManager.getTest().log(LogStatus.SKIP, "Test skipped " + result.getThrowable());
             Log.error(result.getThrowable());
             
         } else  if (result.getStatus() == ITestResult.SUCCESS){
+        	testStatus = "Passed";
             ExtentTestManager.getTest().log(LogStatus.PASS, result.getName());
             SauceREST.jobPassed(jobID);
         }
@@ -137,15 +144,18 @@ public class BaseTest{
         Log.endTestCase(testStatus);
         
 		driver.quit();
-
-
-		
+	
 	}
 
 
 	
+	public void getURL(String url){
+		driver.get(url);
+	}
 
-
+	public HomePageObject getHomePageObject(){
+		return new HomePageObject(driver, Log);		
+	}
 
 	
 	
