@@ -90,10 +90,6 @@ public class BaseTest{
 	@Parameters({ "browser", "platform", "url" })
 	@BeforeMethod(alwaysRun = true)
 	public void methodSetUp(String browser, String platform, String url, Method method, ITestContext testContext) throws IOException, InterruptedException {
-		
-		System.out.println("deleting test data ");
-		//AppUtility.deleteTestDataFromP2P("gurimay12@yahoo.in");
-		System.out.println("deleted");
 		this.url = url;
 		//driver = new Config().selectBrowserOnLocal(browser, platform);
 		driver = new Config(Log).selectBrowserOnSauceLab(browser, platform, method);

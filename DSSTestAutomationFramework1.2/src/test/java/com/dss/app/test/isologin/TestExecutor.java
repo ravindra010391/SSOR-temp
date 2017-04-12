@@ -99,7 +99,7 @@ public class TestExecutor  extends BaseTest {
 	}
 	
 	
-	@Test(enabled = true)
+	@Test( groups = "Regression", enabled = true)
 	public void SSO_Login_With_Gmail_First_Time_Login() throws InterruptedException, IOException{
 		String username = testCaseLevelSSOCredentials.get("Gmail").get(0);
 		String password = testCaseLevelSSOCredentials.get("Gmail").get(1);

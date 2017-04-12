@@ -142,10 +142,12 @@ public class AppUtility {
 				SSOStacks.getIDFromStack(stack_Twitter));
 		testCaseLevelSSOCredentials.put("Facebook",
 				SSOStacks.getIDFromStack(stack_Facebook));
+		
 		if (testCaseLevelSSOCredentials != null)
 			System.out.println("child stack created");
 		else
 			System.out.println("child is null");
+		
 		return testCaseLevelSSOCredentials;
 
 	}
