@@ -10,5 +10,13 @@
       <class name="com.dss.app.test.isologin.TestExecutor"/>
     </classes>
   </test> <!-- MC-STAGE: Test execution on Firefox -->
+   <test name="MC-STAGE: Test execution on ff">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com"/>
+    <parameter name="platform" value="WINDOWS"/>
+    <classes>
+      <class name="com.dss.app.test.isologin.TestExecutor"/>
+    </classes>
+  </test> <!-- MC-STAGE: Test execution on Firefox -->
  
 </suite> <!-- STAGE -->

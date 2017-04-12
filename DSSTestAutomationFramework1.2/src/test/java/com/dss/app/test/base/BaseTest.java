@@ -1,15 +1,13 @@
 package com.dss.app.test.base;
 
-import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.ISuite;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +16,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.dss.app.apputilities.AppUtility;
@@ -47,14 +44,16 @@ public class BaseTest{
 	protected SauceREST SauceREST;
 	protected String jobID;
 	protected String url;
+	protected Map<String, ArrayList<String>> testCaseLevelSSOCredentials;
 	public static String currentSuiteName;
 	
 	
 
 	@BeforeSuite(alwaysRun = true)
-	public void suiteSetUp(ITestContext context) {
+	public void suiteSetUp(ITestContext context) throws IOException {
 		currentSuiteName = context.getCurrentXmlTest().getSuite().getName();
 		Extentmanager.getReporter(currentSuiteName);
+		AppUtility.initAllSSOStacks();
 
 	}
 
@@ -112,13 +111,15 @@ public class BaseTest{
 		Log.startTestCase(method.getName());
 		Log.info("Test: "+testContext.getName());
 		Log.info("Browser: "+browser);
-		Log.info("PLatform: "+platform);
+		Log.info("Platform: "+platform);
 		Log.info("URL: "+url);
+		testCaseLevelSSOCredentials = AppUtility.getTestCaseLevelSSOTestUsers();
+		Log.info("Test Data / SSO Users for Test Case is Created ");		
 		
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void methodTearDown(ITestResult result) throws IOException {
+	public void methodTearDown(ITestResult result) throws IOException, InterruptedException {
 		
 		String testStatus = "null";
 		if (result.getStatus() == ITestResult.FAILURE) {
@@ -142,10 +143,9 @@ public class BaseTest{
         
         Extentmanager.getReporter().endTest(ExtentTestManager.getTest());        
         Extentmanager.getReporter().flush();
-        Log.endTestCase(testStatus);
-        
+        Log.endTestCase(testStatus);    
 		driver.quit();
-	
+		AppUtility.destoryTestCaseLevelSSOTestUsers(testCaseLevelSSOCredentials);	
 	}
 
 

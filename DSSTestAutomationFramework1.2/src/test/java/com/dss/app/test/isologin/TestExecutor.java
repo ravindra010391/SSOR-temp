@@ -21,7 +21,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class TestExecutor  extends BaseTest {
 	
-	@Test(enabled = true, groups = "Regression")
+	@Test(enabled = false, groups = "Regression")
 	public void isISOLoginSuccessful() throws InterruptedException, IOException {
 		System.out.println("deleting test data ");
 		//AppUtility.deleteTestDataFromP2P("gurimay12@yahoo.in");
@@ -42,7 +42,6 @@ public class TestExecutor  extends BaseTest {
 		isSuccess= profilepage.isExpectedUserLogged(username);
 		
 		Assert.assertTrue(isSuccess);
-		
 		
 	}
 
@@ -100,10 +99,10 @@ public class TestExecutor  extends BaseTest {
 	}
 	
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void SSO_Login_With_Gmail_First_Time_Login() throws InterruptedException, IOException{
-		String username = "tribunedss@gmail.com";
-		String password = "tribune1";
+		String username = testCaseLevelSSOCredentials.get("Gmail").get(0);
+		String password = testCaseLevelSSOCredentials.get("Gmail").get(1);
 		String zipcode = "60601";
 		boolean isSuccess = false;
 		
