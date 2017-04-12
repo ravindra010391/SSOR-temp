@@ -3,10 +3,13 @@ package com.dss.app.apputilities;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -86,11 +89,13 @@ public class Config {
 		}
 
 		DesiredCapabilities caps = null;
-
+		
 		switch (browser.toLowerCase()) {
+					
 		case "chrome":
 			System.out.println("Chrome init");
 			caps = DesiredCapabilities.chrome();
+			caps.setCapability("locationContextEnabled",false);
 			caps.setCapability("version", "latest");
 			if (platform.contains("windows"))
 				caps.setCapability("platform", platform);
@@ -105,6 +110,7 @@ public class Config {
 		case "firefox":
 			System.out.println("Firefox init");
 			caps = DesiredCapabilities.firefox();
+			caps.setCapability("locationContextEnabled",false);
 			caps.setCapability("version", "latest");
 
 			if (platform.contains("windows"))

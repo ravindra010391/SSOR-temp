@@ -65,7 +65,7 @@ public class GigyaPageObject {
 	private WebElement btn_AOL_Continue;
 	
 	//Twitter locators
-	@FindBy(xpath = "//*[@id='oauth_form']/fieldset[1]/div[1]/label")
+	@FindBy(id = "username_or_email")
 	private WebElement textbox_Twitter_Username;
 	
 	@FindBy(id = "password")
@@ -89,9 +89,7 @@ public class GigyaPageObject {
 	
 	@FindBy(id  = "oauth2-agree")
 	private WebElement btn_Yahoo_Agree;
-	
-	
-	
+		
 	
 	
 	
@@ -181,7 +179,7 @@ public class GigyaPageObject {
 		CoreUtility.waitForElementPresent(textbox_Facebook_EmailID, driver);
 		CoreUtility.highlightElement(textbox_Facebook_EmailID, driver);
 		CoreUtility.enterData(username, textbox_Facebook_EmailID);
-		Log.info("Entered facebook username");
+		Log.info("Entered facebook username: "+username);
 	}
 	
 	private void enterFacebookPassword(String password){
@@ -203,7 +201,7 @@ public class GigyaPageObject {
 		CoreUtility.waitForElementPresent(textbox_Gmail_EmailID, driver);
 		CoreUtility.highlightElement(textbox_Gmail_EmailID, driver);
 		CoreUtility.enterData(username, textbox_Gmail_EmailID);
-		Log.info("Entered Gmail Email ID ");
+		Log.info("Entered Gmail Email ID: "+username);
 	}
 	
 	private void clickOnNextButtonAfterEnteringGmailUsername(){
@@ -231,7 +229,7 @@ public class GigyaPageObject {
 		CoreUtility.waitForElementPresent(textbox_AOL_Username, driver);
 		CoreUtility.highlightElement(textbox_AOL_Username, driver);
 		CoreUtility.enterData(username, textbox_AOL_Username);
-		Log.info("Entered AOL Username");
+		Log.info("Entered AOL Username: "+username);
 	}
 	
 	private void clickOnAOLSignINAfterEnteringUsername(){
@@ -262,12 +260,12 @@ public class GigyaPageObject {
 		Log.info("Clicked on Continue Button after Entering AOL Credentials");	
 	}
 	
-	private void enterTwitterUsername(String username){
+	private void enterTwitterUsername(String username) throws InterruptedException{
 		CoreUtility.waitForElementPresent(textbox_Twitter_Username, driver);
 		CoreUtility.highlightElement(textbox_Twitter_Username, driver);
-		//CoreUtility.enterData(username, textbox_Twitter_Username); clear() is not working
+		//CoreUtility.enterData(username, textbox_Twitter_Username); //clear() is not working
 		textbox_Twitter_Username.sendKeys(username);
-		Log.info("Entered Twitter Username");
+		Log.info("Entered Twitter Username: "+username);
 	}
 	
 	private void enterTwitterPassword(String password){
@@ -289,7 +287,7 @@ public class GigyaPageObject {
 		CoreUtility.waitForElementPresent(textbox_Yahoo_Username, driver);
 		CoreUtility.highlightElement(textbox_Yahoo_Username, driver);
 		CoreUtility.enterData(username, textbox_Yahoo_Username);	
-		Log.info("Entered Yahoo Username");
+		Log.info("Entered Yahoo Username: "+username);
 	}
 	
 	private void clickOnYahooNextButtonAfterEnteringUsername(){
@@ -319,8 +317,5 @@ public class GigyaPageObject {
 		CoreUtility.clickOnElement(btn_Yahoo_Agree);
 		Log.info("Clicked on Agree Button ");
 	}
-	
-	
 		
-	
 }

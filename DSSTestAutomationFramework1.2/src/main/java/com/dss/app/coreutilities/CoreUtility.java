@@ -68,6 +68,7 @@ public class CoreUtility {
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			visibleElement = wait.until(ExpectedConditions
 					.visibilityOf(element));
+			
 		} catch (Exception e) {
 			//log.debug("Web element not found ");
 		}
@@ -82,14 +83,14 @@ public class CoreUtility {
 			Alert alert = driver.switchTo().alert();
 			if (action.equalsIgnoreCase("accept")) {
 				alert.accept();
-				System.out.println("accepted");
+				//System.out.println("accepted");
 			} else {
 				alert.dismiss();
-			System.out.println("dismissed");
+			//System.out.println("dismissed");
 			}
 
 		} catch (Exception e) {
-			System.out.println("catched alert");
+			//System.out.println("catched alert");
 		}
 	}
 

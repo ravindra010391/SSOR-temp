@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-STAGE">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-STAGE" title="com.dss.app.test.isologin.TestExecutor" hash-for-method="SSO_Login_With_Gmail_First_Time_Login">SSO_Login_With_Gmail_First_Time_Login</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-STAGE" title="com.dss.app.test.isologin.TestExecutor" hash-for-method="SSO_Login_With_Twitter_First_Time_Login">SSO_Login_With_Twitter_First_Time_Login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-STAGE -->
@@ -125,20 +125,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="SSO_Login_With_Gmail_First_Time_Login">
-                  </a> <!-- SSO_Login_With_Gmail_First_Time_Login -->
-                  <span class="method-name">SSO_Login_With_Gmail_First_Time_Login</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;name&quot;,&quot;selector&quot;:&quot;zipCode&quot;}
+                  <a name="SSO_Login_With_Twitter_First_Time_Login">
+                  </a> <!-- SSO_Login_With_Twitter_First_Time_Login -->
+                  <span class="method-name">SSO_Login_With_Twitter_First_Time_Login</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: element not visible
   (Session info: chrome=57.0.2987.98)
   (Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 10.57 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Command duration or timeout: 1.13 seconds
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
 System info: host: &apos;U2-DPE-CPB-0111&apos;, ip: &apos;10.10.121.77&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_20&apos;
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.28.455520 (cc17746adff54984afff480136733114c6b3704b), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1988_1391}, takesHeapSnapshot=true, pageLoadStrategy=normal, hasMetadata=true, hasTouchScreen=false, handlesAlerts=true, databaseEnabled=false, version=57.0.2987.98, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, webdriver.remote.sessionid=a614dea5a79d4223993a5c5569d2816a, locationContextEnabled=true, webStorageEnabled=true, takesScreenshot=true, browserName=chrome, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: a614dea5a79d4223993a5c5569d2816a
-*** Element info: {Using=name, value=zipCode}
+Capabilities [{applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, mobileEmulationEnabled=false, chrome={chromedriverVersion=2.28.455520 (cc17746adff54984afff480136733114c6b3704b), userDataDir=C:\Users\ADMINI~1\AppData\Local\Temp\scoped_dir1824_25558}, takesHeapSnapshot=true, pageLoadStrategy=normal, hasMetadata=true, hasTouchScreen=false, handlesAlerts=true, databaseEnabled=false, version=57.0.2987.98, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, webdriver.remote.sessionid=0977c01ee6e8488f89bc8f0e1e0cb7bb, locationContextEnabled=true, webStorageEnabled=true, takesScreenshot=true, browserName=chrome, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 0977c01ee6e8488f89bc8f0e1e0cb7bb
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -146,16 +144,17 @@ Session ID: a614dea5a79d4223993a5c5569d2816a
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:449)
-	at org.openqa.selenium.By$ByName.findElement(By.java:303)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy11.clear(Unknown Source)
-	at com.dss.app.coreutilities.CoreUtility.enterData(CoreUtility.java:41)
-	at com.dss.app.pageobject.HomePageObject.enterZipcodeOnInterceptPanel(HomePageObject.java:137)
-	at com.dss.app.test.isologin.TestExecutor.SSO_Login_With_Gmail_First_Time_Login(TestExecutor.java:120)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at com.dss.app.coreutilities.CoreUtility.clickOnElement(CoreUtility.java:36)
+	at com.dss.app.pageobject.HomePageObject.clickOnLoginTopNav(HomePageObject.java:98)
+	at com.dss.app.test.isologin.TestExecutor.SSO_Login_With_Twitter_First_Time_Login(TestExecutor.java:251)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -192,24 +191,24 @@ Session ID: a614dea5a79d4223993a5c5569d2816a
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;10&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;2&quot; name=&quot;STAGE&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test name=&quot;MC-STAGE: Test execution on Internet Explorer&quot;&gt;
+  &lt;test name=&quot;MC-STAGE: Test execution on chrome&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com&quot;/&gt;
     &lt;parameter name=&quot;platform&quot; value=&quot;WINDOWS&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.dss.app.test.isologin.TestExecutor&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- MC-STAGE: Test execution on Internet Explorer --&gt;
-  &lt;test name=&quot;MC-STAGE: Test execution on Internet Explorer(failed)&quot; parallel=&quot;tests&quot;&gt;
+  &lt;/test&gt; &lt;!-- MC-STAGE: Test execution on chrome --&gt;
+  &lt;test name=&quot;MC-STAGE: Test execution on chrome(failed)&quot; parallel=&quot;tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com&quot;/&gt;
     &lt;parameter name=&quot;platform&quot; value=&quot;WINDOWS&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.dss.app.test.isologin.TestExecutor&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;SSO_Login_With_Gmail_First_Time_Login&quot;/&gt;
           &lt;include name=&quot;suiteSetUp&quot;/&gt;
           &lt;include name=&quot;suiteTearDown&quot;/&gt;
+          &lt;include name=&quot;SSO_Login_With_Twitter_First_Time_Login&quot;/&gt;
           &lt;include name=&quot;testTearDown&quot;/&gt;
           &lt;include name=&quot;methodTearDown&quot;/&gt;
           &lt;include name=&quot;testSetUp&quot;/&gt;
@@ -217,7 +216,7 @@ Session ID: a614dea5a79d4223993a5c5569d2816a
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.dss.app.test.isologin.TestExecutor --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- MC-STAGE: Test execution on Internet Explorer(failed) --&gt;
+  &lt;/test&gt; &lt;!-- MC-STAGE: Test execution on chrome(failed) --&gt;
 &lt;/suite&gt; &lt;!-- STAGE --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -229,10 +228,10 @@ Session ID: a614dea5a79d4223993a5c5569d2816a
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">MC-STAGE: Test execution on Internet Explorer (1 class)</span>
+                <span class="test-name">MC-STAGE: Test execution on chrome (1 class)</span>
               </li>
               <li>
-                <span class="test-name">MC-STAGE: Test execution on Internet Explorer(failed) (1 class)</span>
+                <span class="test-name">MC-STAGE: Test execution on chrome(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -260,9 +259,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SSO_Login_With_Gmail_First_Time_Login')
+data.setCell(0, 1, 'SSO_Login_With_Twitter_First_Time_Login')
 data.setCell(0, 2, 'com.dss.app.test.isologin.TestExecutor')
-data.setCell(0, 3, 82266);
+data.setCell(0, 3, 102690);
 window.suiteTableData['STAGE']= { tableData: data, tableDiv: 'times-div-STAGE'}
 return data;
 }
@@ -288,9 +287,9 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.dss.app.test.isologin.TestExecutor</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">SSO_Login_With_Yahoo_First_Time_Login</span>
+                <span class="ignored-method-name">SSO_Login_With_Gmail_First_Time_Login</span>
                 <br/>
-                <span class="ignored-method-name">SSO_Login_With_Twitter_First_Time_Login</span>
+                <span class="ignored-method-name">SSO_Login_With_Yahoo_First_Time_Login</span>
                 <br/>
                 <span class="ignored-method-name">SSO_Login_With_Facebook_First_Time_Login</span>
                 <br/>
@@ -310,34 +309,34 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.dss.app.test.isologin.TestExecutor</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">suiteSetUp(org.testng.TestRunner@221af3c0)</span>
+                <span class="method-name">suiteSetUp(org.testng.TestRunner@709ba3fb)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">testSetUp(chrome)</span>
-                <span class="method-start">537 ms</span>
+                <span class="method-start">461 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">methodSetUp(chrome, WINDOWS, http://nguxbeta:nguxtr!b@ngux.latimes.stage.tribdev.com, public void com.dss.app.te...)</span>
-                <span class="method-start">617 ms</span>
+                <span class="method-name">methodSetUp(chrome, WINDOWS, http://nguxbeta:nguxtr!b@ngux.mcall.stage.tribdev.com, public void com.dss.app.test...)</span>
+                <span class="method-start">500 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">SSO_Login_With_Gmail_First_Time_Login</span>
-                <span class="method-start">77079 ms</span>
+                <span class="method-name">SSO_Login_With_Twitter_First_Time_Login</span>
+                <span class="method-start">63158 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">methodTearDown([TestResult name=SSO_Login_With_Gmail_First_Time_Login status=FAILURE method=TestExecutor.SSO_Login_...)</span>
-                <span class="method-start">159362 ms</span>
+                <span class="method-name">methodTearDown([TestResult name=SSO_Login_With_Twitter_First_Time_Login status=FAILURE method=TestExecutor.SSO_Logi...)</span>
+                <span class="method-start">165867 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
-                <span class="method-name">testTearDown(org.testng.TestRunner@221af3c0)</span>
-                <span class="method-start">163217 ms</span>
+                <span class="method-name">testTearDown(org.testng.TestRunner@709ba3fb)</span>
+                <span class="method-start">169789 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">suiteTearDown</span>
-                <span class="method-start">163286 ms</span>
+                <span class="method-start">169847 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

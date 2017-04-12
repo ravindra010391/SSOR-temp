@@ -190,7 +190,7 @@ public class HomePageObject {
 		CoreUtility.waitForElementPresent(textBox_EmailId,
 				driver);
 		CoreUtility.enterData(emailId, textBox_EmailId);
-		Log.info("Entered Email id");
+		Log.info("Entered Email id: "+emailId);
 		return this;
 	}
 

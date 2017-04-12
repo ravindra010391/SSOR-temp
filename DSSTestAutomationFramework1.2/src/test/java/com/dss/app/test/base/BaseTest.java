@@ -49,7 +49,7 @@ public class BaseTest{
 	protected String url;
 	public static String currentSuiteName;
 	
-
+	
 
 	@BeforeSuite(alwaysRun = true)
 	public void suiteSetUp(ITestContext context) {
@@ -91,7 +91,10 @@ public class BaseTest{
 	@Parameters({ "browser", "platform", "url" })
 	@BeforeMethod(alwaysRun = true)
 	public void methodSetUp(String browser, String platform, String url, Method method, ITestContext testContext) throws IOException, InterruptedException {
-
+		
+		System.out.println("deleting test data ");
+		//AppUtility.deleteTestDataFromP2P("gurimay12@yahoo.in");
+		System.out.println("deleted");
 		this.url = url;
 		//driver = new Config().selectBrowserOnLocal(browser, platform);
 		driver = new Config(Log).selectBrowserOnSauceLab(browser, platform, method);
@@ -103,11 +106,9 @@ public class BaseTest{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		getURL(url);
-		CoreUtility.handleAlert(driver, "accept");
 		
 		homepage = getHomePageObject();
-		AppUtility.closeAds(homepage.btn_AdClose, driver);
-		
+				
 		Log.startTestCase(method.getName());
 		Log.info("Test: "+testContext.getName());
 		Log.info("Browser: "+browser);
@@ -151,10 +152,13 @@ public class BaseTest{
 	
 	public void getURL(String url){
 		driver.get(url);
+		CoreUtility.handleAlert(driver, "accept");
 	}
 
 	public HomePageObject getHomePageObject(){
-		return new HomePageObject(driver, Log);		
+		HomePageObject homepage =  new HomePageObject(driver, Log);
+		AppUtility.closeAds(homepage.btn_AdClose, driver);
+		return homepage;
 	}
 
 	
