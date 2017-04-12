@@ -21,7 +21,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class TestExecutor  extends BaseTest {
 	
-	@Test(enabled = false)
+	@Test(enabled = true, groups = "Regression")
 	public void isISOLoginSuccessful() throws InterruptedException, IOException {
 		System.out.println("deleting test data ");
 		//AppUtility.deleteTestDataFromP2P("gurimay12@yahoo.in");
@@ -205,7 +205,7 @@ public class TestExecutor  extends BaseTest {
 		
 	}
 	
-	@Test(enabled = true) 
+	@Test(enabled = false) 
 	public void SSO_Login_With_Twitter_First_Time_Login() throws InterruptedException, IOException{
 		String username = "tribunedss1@yahoo.com";
 		String password = "tribune1";

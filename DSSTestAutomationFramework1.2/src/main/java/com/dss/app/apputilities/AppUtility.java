@@ -98,7 +98,7 @@ public class AppUtility {
 	    driver.manage().deleteAllCookies();
 	}
 
-	public static void deleteTestDataFromP2P(String email) throws InterruptedException{
+	public static void deleteTestDataFromP2P(List<String> allEmailId) throws InterruptedException{
 		
 		
 	  P2PLoginPageObject p2pLogIn ;
@@ -113,10 +113,9 @@ public class AppUtility {
 		p2pHome=p2pLogIn.doP2PLogin(GlobalValues.P2P_STAGE_USERNAME, GlobalValues.P2P_STAGE_PASSWORD);
 		p2pRegistration=p2pHome.clickRegistration();
 		
-		//for(String email : allEmailId){
-		p2pRegistration.deleteEntry(email);
-		System.out.println("email deleted :"+email);
-		//}
+		for(String email : allEmailId){
+			p2pRegistration.deleteEntry(email);
+		}
 		localdriver.close();
 		
 	}
@@ -150,37 +149,17 @@ public class AppUtility {
 	
 	public static void destoryTestCaseLevelSSOTestUsers(Map<String, ArrayList<String>> testCaseLevelSSOCredentials) throws InterruptedException{
 		
-		
-	List<String> allEmailId = null;
+		List<String> allSSOEmailids=new ArrayList<String>();
+		Map<String, ArrayList<String>> temp1;
 	
-		System.out.println("In distroy method");
+		for(String key: testCaseLevelSSOCredentials.keySet()){
 		
-	 Object[] temp = testCaseLevelSSOCredentials.values().toArray();
+			allSSOEmailids.add(testCaseLevelSSOCredentials.get(key).get(0));
 		
-		for(int i =0; i<temp.length; i++){
-			String[] credentials = temp[i].toString().split(",");
-			System.out.println("to array =="+credentials[0].replace("[",""));
-			allEmailId.add(credentials[0].replace("[","").toString());
 		}
-	
-	
-		/*while(true)
-		{
-			int i = 1;
-			for(ArrayList<String> eachEmail : temp){
-				String name = eachEmail.get(0);
-				System.out.println("-- "+name);
-				allEmailId.add(name);
-				//deleteTestDataFromP2P(name);
-				i++;
-				System.out.println("i = "+i);
-			}
-		break;
-		}*/
-		System.out.println("fsdfdffd === "+allEmailId);
 		
 		System.out.println("calling delete p2p from distroy");
-		//deleteTestDataFromP2P(allEmailId);
+		deleteTestDataFromP2P(allSSOEmailids);
 		stack_Facebook.push(testCaseLevelSSOCredentials.get("Facebook"));
 		stack_Twitter.push(testCaseLevelSSOCredentials.get("Twitter"));
 		stack_Aol.push(testCaseLevelSSOCredentials.get("Aol"));
